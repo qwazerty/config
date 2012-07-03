@@ -23,9 +23,9 @@ hi CursorLine ctermbg=darkgrey cterm=none
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline
 
-"Highlight column after 80 characters
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
+" Highlight column after 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 " Opening and closing braces
 imap <C-F> {<CR>}<C-O>O
