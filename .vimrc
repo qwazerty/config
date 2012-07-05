@@ -35,10 +35,26 @@ imap <C-D> ()<Esc>i
 " Opening and closing square brackets
 imap <C-G> []<Esc>i
 	
+imap <C-V> <Esc>$a;<Esc>
+nnoremap <C-V> <Esc>$a;<Esc>
+
 nnoremap <C-C> <Esc>^i<Tab><Down><Esc>
+
 nnoremap <C-X> <Esc>^X<Down><Esc>
-imap <C-V> <Esc>$a;<Esc>i
-nnoremap <C-V> <Esc>$a;<Esc>i
+
+nnoremap <C-Z> <Esc>^XXXXXXXXXXXXXXXXXXXXXXXX<Down><Esc>
+
+imap <C-B> <Esc>^i//<Esc><Down>
+nnoremap <C-B> <Esc>^i//<Esc><Down>
+
+imap <C-N> <Esc>^xx<Down>
+nnoremap <C-N> <Esc>^xx<Down>
+
+imap <C-H> <Esc>^i
+nnoremap <C-H> <Esc>^i
+
+imap <C-L> <Esc>$a
+nnoremap <C-L> <Esc>$a
 	
 " Matching parenthesis fix
 hi MatchParen cterm=bold ctermfg=red
