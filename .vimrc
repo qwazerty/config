@@ -55,7 +55,10 @@ nnoremap <C-H> <Esc>^i
 
 imap <C-L> <Esc>$a
 nnoremap <C-L> <Esc>$a
-	
+
+imap <C-E> <?php
+nnoremap <C-E> i<?php
+
 " Matching parenthesis fix
 hi MatchParen cterm=bold ctermfg=red
 
