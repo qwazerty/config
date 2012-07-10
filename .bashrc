@@ -15,6 +15,7 @@ alias gpull='git pull -v origin master'
 
 alias bel='cd /var/www/bel'
 alias wp='cd /var/www/bel/wp-content/plugins/wp-multilingual-slider/'
+alias ela='cd /var/www/asso-ela.dev'
 
 git='http://github.com/'
 gqwaz=$git'qwazerty'
