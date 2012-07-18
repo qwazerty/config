@@ -1,12 +1,15 @@
 set enc=utf-8
-set tabstop=2
-set shiftwidth=2
 syntax on
 "set expandtab
 "set autoindent
 "set smartindent
 "set showmatch
 	
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=3
 set ts=3
 set number
 set showcmd
@@ -60,5 +63,5 @@ imap <C-E> <?php
 nnoremap <C-E> i<?php
 
 " Matching parenthesis fix
-hi MatchParen cterm=bold ctermfg=red
+hi MatchParen cterm=bold ctermfg=red ctermbg=none
 
