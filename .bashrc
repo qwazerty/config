@@ -11,6 +11,7 @@ alias gadd='git add -v'
 alias gcommit='git commit -am '
 alias gpush='git push -v origin master'
 alias gpull='git pull -v origin master'
+alias z='zlock'
 
 # Tchou-tchou !
 alias disable-sl='alias ls="ls --color" && sed -i "s/alias ls/alias ls/" ~/.bashrc'
@@ -23,8 +24,8 @@ setxkbmap -option ctrl:nocaps
 parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
- 
-PS1='\t \[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ ' 
+
+PS1='\t \[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
 
 #gitinit function for initialize a git repo
 gitinit(){
