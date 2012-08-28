@@ -12,6 +12,8 @@ alias gcommit='git commit -am '
 alias gpush='git push -v origin master'
 alias gpull='git pull -v origin master'
 alias z='zlock'
+alias sw4='telnet towel.blinkenlights.nl'
+alias zsw='telnet towel.blinkenlights.nl && zlock'
 
 # Tchou-tchou !
 alias disable-sl='alias ls="ls --color" && sed -i "s/alias ls/alias ls/" ~/.bashrc'
