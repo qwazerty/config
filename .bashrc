@@ -1,7 +1,8 @@
+alias src='source ~/.bashrc'
 alias us='setxkbmap us'
 alias fr='setxkbmap fr'
+alias l='ls --color'
 alias la='ls -la'
-alias l='ls'
 alias ll='ls -l'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -11,13 +12,13 @@ alias gadd='git add -v'
 alias gcommit='git commit -am '
 alias gpush='git push -v origin master'
 alias gpull='git pull -v origin master'
-alias z='zlock'
-alias sw4='telnet towel.blinkenlights.nl'
-alias zsw='telnet towel.blinkenlights.nl && zlock'
+alias glist='git diff --cached --name-only'
 
-# Tchou-tchou !
 alias disable-sl='alias ls="ls --color" && sed -i "s/alias ls/alias ls/" ~/.bashrc'
 alias enable-sl='alias ls="sl" && sed -i "s/#*alias ls/alias ls/" ~/.bashrc'
+
+git='http://github.com/'
+gqwaz=$git'qwazerty'
 
 # NO CAPS LOCK !!!11!
 setxkbmap -option ctrl:nocaps
@@ -27,7 +28,7 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
 }
 
-PS1='\t \[\033[01;37m\]\w\[\033[00;35m\]$(parse_git_branch)\[\033[00m\] \$ '
+PS1='\e[0;36m[\t] \e[1;31m[\u]@\e[1;34m[\w]\e[0;35m$(parse_git_branch) \e[0;31m\$\e[0m '
 
 #gitinit function for initialize a git repo
 gitinit(){
