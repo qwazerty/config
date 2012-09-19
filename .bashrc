@@ -17,12 +17,7 @@ alias glist='git diff --cached --name-only'
 # NO CAPS LOCK !!!11!
 setxkbmap -option ctrl:nocaps
 
-#Color branches
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ \[\1\]/'
-}
-
-PS1='\e[0;36m[\t] \e[1;31m[\u]@\e[1;34m[\w]\e[0;35m$(parse_git_branch) \e[0;31m\$\e[0m '
+PS1='\[\e[0;36m[\t]\] \[\e[1;31m[\u]@\]\[\e[1;34m[\w]\] \[\e[0;31m\$\e[0m\] '
 
 #gitinit function for initialize a git repo
 gitinit(){
