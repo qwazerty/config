@@ -17,7 +17,25 @@ alias glist='git diff --cached --name-only'
 # NO CAPS LOCK !!!11!
 setxkbmap -option ctrl:nocaps
 
-PS1='\[\e[0;36m[\t]\] \[\e[1;31m[\u]@\]\[\e[1;34m[\w]\] \[\e[0;31m\$\e[0m\] '
+rec_path()
+{
+   if [ `echo "$1" | wc` -lt 10 ]; then
+      echo "$1"
+   else
+      rec_path ``
+   fi
+}
+
+computed_path='\w'
+
+clrblu='\[\e[0;36m\]'
+clrred='\[\e[0;31m\]'
+clrBred='\[\e[1;31m\]'
+clrBblu='\[\e[1;34m\]'
+clrrst='\[\e[0m\]'
+
+PS1="${clrblu}[\t] ${clrred}[\u@${clrBblu}${computed_path}]\n\
+${clrBred}\$${clrrst} "
 
 #gitinit function for initialize a git repo
 gitinit(){
