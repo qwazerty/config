@@ -7,26 +7,58 @@ set enc=utf-8
 
 " Enable syntax highlight
 syntax on
-set noexpandtab
+
+" Force vim instead of vi
+set nocompatible
+
+" Set tabs as spaces
+set expandtab
+
+" Disable indent if Makefile
+autocmd FileType make set noexpandtab
+
+"#Just a random comment
 set copyindent
+
+"#And another one
 set preserveindent
+
+" Set indent
+set tabstop=4
+
+"#Set another indent
+set shiftwidth=4
+
+"#Yet another indent
 set softtabstop=0
-set shiftwidth=3
-set tabstop=3
-set number
+
+" Force command show
 set showcmd
-set nocp
+
+" Show command on two lines with a white line
 set laststatus=2
+
+" Show numbers
+set number
+
+" Set highlight color
 set hlsearch
 
+" Add Scroll limit to scroll before end of window
+set scrolloff=20
+
+" Fix background for syntax color
+set background=dark
+
 " CursorLine only on insert mode
-hi CursorLine ctermbg=darkgrey cterm=none
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline
+highlight cursorline cterm=none ctermbg=darkgray
 
 " Highlight column after 80 characters
-"highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-"match OverLength /\%81v.\+/
+":highlight OverLength cterm=none ctermfg=100
+":match OverLength /\%>80v.\+/
+set colorcolumn=80
 
 " Remap : on ;
 nnoremap ; :
@@ -93,6 +125,3 @@ function TrimWhiteSpace()
 
 " Map removing trailing spaces on <F12>
 map <F12> :call TrimWhiteSpace()<CR>
-
-" Test eol
-set fileformats+=dos
