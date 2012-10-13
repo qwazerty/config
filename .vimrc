@@ -63,14 +63,15 @@ set colorcolumn=80
 " Remap : on ;
 nnoremap ; :
 
-" Opening and closing quotes
-imap <C-F> ''<Esc>i
-
-" Opening and closing parenthesis
-imap <C-D> ()<Esc>i
-
-" Opening and closing square brackets
-imap <C-G> ""<Esc>i
+" HARDCORE MODE! Unbind arrow keys
+imap <UP> <Nop>
+imap <DOWN> <Nop>
+imap <LEFT> <Nop>
+imap <RIGHT> <Nop>
+nnoremap <UP> <Nop>
+nnoremap <DOWN> <Nop>
+nnoremap <LEFT> <Nop>
+nnoremap <RIGHT> <Nop>
 
 " End of line semi-colon
 imap <C-V> <Esc>$a;<Esc>
@@ -88,12 +89,12 @@ nnoremap <C-X> <Esc>^X<Down><Esc>
 nnoremap <C-Z> <Esc>^XXXXXXXXXXXXXXXXXXXXXXXX<Down><Esc>
 
 " Comment current line C-style
-imap <C-B> <Esc>^i//<Esc><Down>
-nnoremap <C-B> <Esc>^i//<Esc><Down>
+imap <C-B> <Esc>^i/*<Esc>$a*/<Down>
+nnoremap <C-B> <Esc>^i/*<Esc>$a*/<Down>
 
 " Uncomment current line C-style
-imap <C-N> <Esc>^xx<Down>
-nnoremap <C-N> <Esc>^xx<Down>
+imap <C-N> <Esc>^xx$xx<Down>
+nnoremap <C-N> <Esc>^xx$xx<Down>
 
 " Goto beginning of line
 imap <C-H> <Esc>^i
