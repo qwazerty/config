@@ -45,10 +45,13 @@ set number
 set hlsearch
 
 " Add Scroll limit to scroll before end of window
-set scrolloff=20
+set scrolloff=10
 
 " Fix background for syntax color
 set background=dark
+
+" Remove latency when leaving insertmode
+set timeoutlen=0
 
 " CursorLine only on insert mode
 au InsertEnter * set cursorline
@@ -112,9 +115,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Show trailing whitespace and spaces before a tab:
 match ExtraWhitespace /\s\+$\| \+\ze\t\| [^\t]\zs\t\+\| \(\s*\n\)\+\%$/
-
-autocmd InsertLeave * redraw!
-autocmd BufWinLeave * call clearmatches()
 
 " Removes trailing spaces
 function TrimWhiteSpace()
