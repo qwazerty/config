@@ -45,7 +45,7 @@ set number
 set hlsearch
 
 " Add Scroll limit to scroll before end of window
-set scrolloff=10
+set scrolloff=99
 
 " Fix background for syntax color
 set background=dark
@@ -81,9 +81,6 @@ nmap <C-V> <Esc>$a;<Esc>
 " Indent current line by one tab
 nmap <C-C> <Esc>^i<Tab><Down><Esc>
 
-" Completly unindent current line (more or less)
-nmap <C-Z> <Esc>^XXXXXXXXXXXXXXXXXXXXXXXX<Down><Esc>
-
 " Comment current line C-style
 imap <C-B> <Esc>^i/*<Esc>$a*/<Down>
 nmap <C-B> <Esc>^i/*<Esc>$a*/<Down>
@@ -91,14 +88,6 @@ nmap <C-B> <Esc>^i/*<Esc>$a*/<Down>
 " Uncomment current line C-style
 imap <C-N> <Esc>^xx$xx<Down>
 nmap <C-N> <Esc>^xx$xx<Down>
-
-" Goto beginning of line
-imap <C-H> <Esc>^i
-nmap <C-H> <Esc>^i
-
-" Goto end of line
-imap <C-L> <Esc>$a
-nmap <C-L> <Esc>$a
 
 " Matching parenthesis changes
 hi MatchParen cterm=bold ctermfg=red ctermbg=none
