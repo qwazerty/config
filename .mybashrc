@@ -11,8 +11,8 @@ alias m='make'
 alias nake='make'
 alias gadd='git add -v'
 alias gcommit='git commit -am '
-alias gpush='git push -v origin master'
 alias gpull='git pull -v origin master'
+alias gpush='gpull && git push -v origin master'
 alias glist='git diff --cached --name-only'
 alias gstat='git status'
 alias gshow='git ls-tree --name-only -r HEAD'
@@ -38,14 +38,12 @@ setxkbmap -option ctrl:nocaps
 
 rec_path()
 {
-   if [ `echo "$1" | wc` -lt 10 ]; then
-      echo "$1"
-   else
-      rec_path ``
-   fi
+    if [ `echo "$1" | wc -c` -lt 21 ]; then
+        echo "$2$1"
+    else
+        rec_path `echo "$1" | cut -d'/' -f2-` '[..]/'
+    fi
 }
-
-computed_path='\w'
 
 clrblu='\[\e[0;36m\]'
 clrred='\[\e[0;31m\]'
@@ -53,5 +51,5 @@ clrBred='\[\e[1;31m\]'
 clrBblu='\[\e[1;34m\]'
 clrrst='\[\e[0m\]'
 
-PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}${computed_path}]\n\
+PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\w]\n\
 ${clrBred}\$${clrrst} "
