@@ -2,6 +2,8 @@
 " Vimrc by qwazerty "
 " ================= "
 
+set t_Co=256
+
 " utf-8 encoding
 set enc=utf-8
 
