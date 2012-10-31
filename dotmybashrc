@@ -63,5 +63,5 @@ clrBgry='\[\e[1;30m\]'
 clrprpl='\[\e[1;35m\]'
 clrrst='\[\e[0m\]'
 
-PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\w] ${clrprpl}[\$?]\n\
+PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\W] ${clrprpl}[\$?]\n\
 ${clrBred}\$${clrrst} "
