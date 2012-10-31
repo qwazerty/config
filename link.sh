@@ -1,7 +1,8 @@
 #! /bin/sh
 
 var=`pwd`
-rm -rf ~/.mybashrc ~/.vimrc ~/.tmux.conf
-ln -s $var/.mybashrc ~/.mybashrc
-ln -s $var/.vimrc ~/.vimrc
-ln -s $var/.tmux.conf ~/.tmux.conf
+rm -rf ~/.mybashrc ~/.vimrc ~/.i3 ~/.login
+ln -s $var/dotmybashrc ~/.mybashrc
+ln -s $var/dotvimrc ~/.vimrc
+ln -s $var/doti3 ~/.i3
+ln -s $var/dotlogin ~/.login
