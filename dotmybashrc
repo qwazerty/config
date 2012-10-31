@@ -44,9 +44,6 @@ alias mmount1='sudo mount /dev/sdb1 /mnt && cd /mnt'
 alias mmount2='sudo mount /dev/sda2 /mnt && cd /mnt'
 alias mumout='sudo umount /mnt'
 
-# Mask chmod when creating file to prevent r/w if not user
-umask 066
-
 # NO CAPS LOCK !!!11!
 setxkbmap -option ctrl:nocaps
 rec_path()
@@ -62,7 +59,9 @@ clrblu='\[\e[0;36m\]'
 clrred='\[\e[0;31m\]'
 clrBred='\[\e[1;31m\]'
 clrBblu='\[\e[1;34m\]'
+clrBgry='\[\e[1;30m\]'
+clrprpl='\[\e[1;35m\]'
 clrrst='\[\e[0m\]'
 
-PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\W] ${clrblu}> ${clrBred}[\$?]\n\
+PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\w] ${clrprpl}[\$?]\n\
 ${clrBred}\$${clrrst} "
