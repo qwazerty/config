@@ -84,12 +84,10 @@ nmap <C-V> <Esc>$a;<Esc>
 nmap <C-C> <Esc>^i<Tab><Down><Esc>
 
 " Comment current line C-style
-imap <C-B> <Esc>^i/*<Esc>$a*/<Down>
-nmap <C-B> <Esc>^i/*<Esc>$a*/<Down>
+nmap <C-B> <Esc>^i/*<Esc>$a*/<Down><Esc>
 
 " Uncomment current line C-style
-imap <C-N> <Esc>^xx$xx<Down>
-nmap <C-N> <Esc>^xx$xx<Down>
+nmap <C-N> <Esc>^xx$xx<Down><Esc>
 
 " Matching parenthesis changes
 hi MatchParen cterm=bold ctermfg=red ctermbg=none
