@@ -18,12 +18,24 @@ alias gpush='gpull && git push -v origin master'
 alias glist='git diff --cached --name-only'
 alias gstat='git status'
 alias gshow='git ls-tree --name-only -r HEAD'
-alias z='zlock -immed -text "Run little kitty. RUN!"'
+alias z='zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
 alias valgrind='valgrind --tool=memcheck --leak-check=yes --show-reachable=yes'
 alias emacs='emacs -nw'
 alias ne='emacs'
 alias am='alsamixer'
-alias ssh_rom='ssh -p 512 qwazerty@destrif.dlinkddns.com'
+alias ssh_rom='ssh -p 512 qwazerty@destrif.no-ip.org'
+alias chmox='chmod +x'
+alias gccf='gcc -std=c99 -pedantic -Wall \
+    -Wno-missing-braces -Wextra -Wno-missing-field-initializers -Wformat=2 \
+    -Wswitch-default -Wswitch-enum -Wcast-align -Wpointer-arith \
+    -Wbad-function-cast -Wstrict-overflow=5 -Wstrict-prototypes -Winline \
+    -Wundef -Wnested-externs -Wcast-qual -Wshadow -Wunreachable-code \
+    -Wlogical-op -Wfloat-equal -Wstrict-aliasing=2 -Wredundant-decls \
+    -Wold-style-definition -Werror \
+    -ggdb3 -g \
+    -O0 \
+    -fno-omit-frame-pointer -ffloat-store -fno-common -fstrict-aliasing \
+    -lm'
 
 # Custom aliases
 alias ds1='xrandr --auto --output VGA1 --mode 1280x1024 --left-of LVDS1'
@@ -34,7 +46,6 @@ alias mumout='sudo umount /mnt'
 
 # NO CAPS LOCK !!!11!
 setxkbmap -option ctrl:nocaps
-
 rec_path()
 {
     if [ `echo "$1" | wc -c` -lt 21 ]; then
@@ -52,5 +63,5 @@ clrBgry='\[\e[1;30m\]'
 clrprpl='\[\e[1;35m\]'
 clrrst='\[\e[0m\]'
 
-PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\w] ${clrprpl}[\$?]\n\
+PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\W] ${clrprpl}[\$?]\n\
 ${clrBred}\$${clrrst} "
