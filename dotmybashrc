@@ -27,7 +27,7 @@ alias ssh_rom='ssh -p 512 qwazerty@destrif.dlinkddns.com'
 
 # Custom aliases
 alias ds1='xrandr --auto --output VGA1 --mode 1280x1024 --left-of LVDS1'
-alias ds2='xrandr --auto --output VGA2 --mode 1280x1024 --left-of LVDS1'
+alias ds2='xrandr --auto --output VGA1 --mode 1680x1050 --right-of LVDS1'
 alias mmount1='sudo mount /dev/sdb1 /mnt && cd /mnt'
 alias mmount2='sudo mount /dev/sda2 /mnt && cd /mnt'
 alias mumout='sudo umount /mnt'

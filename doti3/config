@@ -32,22 +32,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Left focus left
-#bindsym $mod+Down focus down
-#bindsym $mod+Up focus up
-#bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Shift+H move left
 bindsym $mod+Shift+J move down
 bindsym $mod+Shift+K move up
 bindsym $mod+Shift+L move right
-
-# alternatively, you can use the cursor keys:
-#bindsym $mod+Shift+Left move left
-#bindsym $mod+Shift+Down move down
-#bindsym $mod+Shift+Up move up
-#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+y split h
@@ -71,9 +60,6 @@ bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindcode $mod+d focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -130,17 +116,17 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-#bindsym $mod+r mode "resize"
-
-bindsym $mod+r exec fbrun -fg white -bg black
-
-# Assign dclock & ns_xm to workspace 2
+# Assign custom user
 assign [class="DClock"] 10
 assign [class="Xm"] 10
+assign [class="Chromium-browser"] 2
 for_window [class="Zlock"] floating enable
+
+bindsym $mod+m exec ~/.i3/amute.sh
+bindsym $mod+Shift+M exec ~/.i3/aunmute.sh
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+    status_command i3status
 }
