@@ -1,5 +1,12 @@
 #! /bin/bash
 
+#################################
+# dotmybashrc config file       #
+# by Kevin "qwazerty" Houdebert #
+# houdeb_k / EPITA 2015         #
+#################################
+
+# Common aliases
 alias us='setxkbmap us'
 alias fr='setxkbmap fr'
 alias l='ls --color'
@@ -8,9 +15,22 @@ alias ll='ls -l'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias e='vim'
-alias c='chromium-browser'
+alias c='chromium-browser || google-chrome'
+
+# ChmoXXX
+alias chmox='chmod +x'
+
+# Makefile aliases
 alias m='make'
 alias nake='make'
+alias am='alsamixer'
+alias cm='./configure && make'
+
+# Haha like I would use emacs
+alias emacs='emacs -nw'
+alias ne='emacs'
+
+# Git related aliases
 alias gadd='git add -v'
 alias gcommit='git commit -am '
 alias gpull='git pull -v origin master'
@@ -18,13 +38,13 @@ alias gpush='gpull && git push -v origin master'
 alias glist='git diff --cached --name-only'
 alias gstat='git status'
 alias gshow='git ls-tree --name-only -r HEAD'
+
+# EPITA related aliases
 alias z='zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
+
+# Programming aliases
 alias valgrind='valgrind --tool=memcheck --leak-check=yes --show-reachable=yes'
-alias emacs='emacs -nw'
-alias ne='emacs'
-alias am='alsamixer'
-alias ssh_rom='ssh -p 512 qwazerty@destrif.no-ip.org'
-alias chmox='chmod +x'
+# Dat flags
 alias gccf='gcc -std=c99 -pedantic -Wall \
     -Wno-missing-braces -Wextra -Wno-missing-field-initializers -Wformat=2 \
     -Wswitch-default -Wswitch-enum -Wcast-align -Wpointer-arith \
@@ -40,21 +60,17 @@ alias gccf='gcc -std=c99 -pedantic -Wall \
 # Custom aliases
 alias ds1='xrandr --auto --output VGA1 --mode 1280x1024 --left-of LVDS1'
 alias ds2='xrandr --auto --output VGA1 --mode 1680x1050 --right-of LVDS1'
-alias mmount1='sudo mount /dev/sdb1 /mnt && cd /mnt'
-alias mmount2='sudo mount /dev/sda2 /mnt && cd /mnt'
+alias mmount1='sudo mount /dev/sdb1 /mnt'
+alias mmount2='sudo mount /dev/sda2 /mnt'
 alias mumout='sudo umount /mnt'
 
 # NO CAPS LOCK !!!11!
 setxkbmap -option ctrl:nocaps
-rec_path()
-{
-    if [ `echo "$1" | wc -c` -lt 21 ]; then
-        echo "$2$1"
-    else
-        rec_path `echo "$1" | cut -d'/' -f2-` '[..]/'
-    fi
-}
 
+# Change keyboard repeat rate (dirty)
+xset r rate 242 100
+
+# Color variables for PS1
 clrblu='\[\e[0;36m\]'
 clrred='\[\e[0;31m\]'
 clrBred='\[\e[1;31m\]'
@@ -63,5 +79,6 @@ clrBgry='\[\e[1;30m\]'
 clrprpl='\[\e[1;35m\]'
 clrrst='\[\e[0m\]'
 
+# Bash prompt
 PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\W] ${clrprpl}[\$?]\n\
 ${clrBred}\$${clrrst} "
