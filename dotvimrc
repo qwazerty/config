@@ -55,6 +55,9 @@ set background=dark
 " Remove latency when leaving insertmode
 set timeoutlen=0
 
+" Set normal backspace behaviour
+set backspace=2
+
 " CursorLine only on insert mode
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline
