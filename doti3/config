@@ -119,7 +119,6 @@ mode "resize" {
 # Assign custom user
 assign [class="DClock"] 10
 assign [class="Xm"] 10
-assign [class="Chromium-browser"] 2
 for_window [class="Zlock"] floating enable
 
 bindsym $mod+m exec ~/.i3/amute.sh
