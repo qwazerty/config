@@ -53,7 +53,7 @@ set scrolloff=99
 set background=dark
 
 " Remove latency when leaving insertmode
-set timeoutlen=0
+"set timeoutlen=0
 
 " Set normal backspace behaviour
 set backspace=2
