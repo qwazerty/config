@@ -9,9 +9,10 @@
 # Common aliases
 alias us='setxkbmap us'
 alias fr='setxkbmap fr'
+alias ls='ls --color'
 alias l='ls --color'
-alias la='ls -la'
-alias ll='ls -l'
+alias la='ls -la --color'
+alias ll='ls -l --color'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias e='vim'
@@ -64,21 +65,15 @@ alias mmount1='sudo mount /dev/sdb1 /mnt'
 alias mmount2='sudo mount /dev/sda2 /mnt'
 alias mumout='sudo umount /mnt'
 
-# NO CAPS LOCK !!!11!
-setxkbmap -option ctrl:nocaps
-
-# Change keyboard repeat rate (dirty)
-xset r rate 242 100
-
 # Color variables for PS1
-clrblu='\[\e[0;36m\]'
-clrred='\[\e[0;31m\]'
-clrBred='\[\e[1;31m\]'
-clrBblu='\[\e[1;34m\]'
-clrBgry='\[\e[1;30m\]'
-clrprpl='\[\e[1;35m\]'
-clrrst='\[\e[0m\]'
+cb='\[\e[0;36m\]'
+cr='\[\e[0;31m\]'
+cR='\[\e[1;31m\]'
+cB='\[\e[1;34m\]'
+cG='\[\e[1;30m\]'
+cp='\[\e[1;35m\]'
+clr='\[\e[0m\]'
 
 # Bash prompt
-PS1="${clrblu}[\t] ${clrBred}[\u@\h:${clrBblu}\W] ${clrprpl}[\$?]\n\
-${clrBred}\$${clrrst} "
+PS1="${cb}[\t] ${cR}[\u@\h:${cB}\W] ${cp}[\$?]\n\
+${cR}\$${clr} "
