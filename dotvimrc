@@ -1,6 +1,11 @@
-" ================= "
-" Vimrc by qwazerty "
-" ================= "
+"""""""""""""""""""""""""""""""""
+" dotvimrc config file          "
+" by Kevin "qwazerty" Houdebert "
+" houdeb_k / EPITA 2015         "
+"""""""""""""""""""""""""""""""""
+
+" utf-8 encoding
+set enc=utf-8
 
 " Enable syntax highlight
 syntax on
@@ -14,10 +19,10 @@ set expandtab
 " Disable indent if Makefile
 autocmd FileType make set noexpandtab
 
-"#Just a random comment
+" Just a random comment
 set copyindent
 
-"#And another one
+" And another one
 set preserveindent
 
 " Set indent
