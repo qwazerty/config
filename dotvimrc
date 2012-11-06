@@ -32,7 +32,7 @@ set tabstop=8
 set shiftwidth=4
 
 " Yet another indent
-set softtabstop=0
+set softtabstop=4
 
 " Force command show
 set showcmd
