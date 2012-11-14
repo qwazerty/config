@@ -49,7 +49,8 @@ alias gstat='git status'
 alias gshow='git ls-tree --name-only -r HEAD'
 
 # EPITA related aliases
-alias z='zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
+alias z='i3lock -c 420042 || \
+    zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
 
 # Programming aliases
 alias valgrind='valgrind --tool=memcheck --leak-check=yes --show-reachable=yes'
