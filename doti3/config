@@ -124,6 +124,9 @@ for_window [class="Zlock"] floating enable
 bindsym $mod+m exec ~/.i3/amute.sh
 bindsym $mod+Shift+M exec ~/.i3/aunmute.sh
 
+bindsym $mod+t exec ~/.i3/touchpadon.sh
+bindsym $mod+Shift+T exec ~/.i3/touchpadoff.sh
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
