@@ -1,3 +1,3 @@
 #! /bin/bash
 
-amixer set PCM 100%
+amixer set Master unmute
