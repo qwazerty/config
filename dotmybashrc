@@ -6,6 +6,14 @@
 # houdeb_k / EPITA 2015         #
 #################################
 
+# Environment
+export EDITOR='vim'
+if [ -e /usr/bin/vimpager ]; then
+    export PAGER='vimpager'
+else
+    export PAGER='less'
+fi
+
 # Common aliases
 alias us='setxkbmap us'
 alias fr='setxkbmap fr'
