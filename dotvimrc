@@ -112,11 +112,14 @@ function TrimWhiteSpace()
 " Map removing trailing spaces on <F12>
 map <F12> :call TrimWhiteSpace()<CR>
 
+" Unmap help
+imap <F1> <Nop>
+
 " Map set number command
-map <F2> :set number<CR>
+map <F1> :set number<CR>
 
 " Map set relativenumber command
-map <F3> :set relativenumber<CR>
+map <F2> :set relativenumber<CR>
 
 " Map set nonumber command
-map <F4> :set nonumber<CR>
+map <F3> :set nonumber<CR>
