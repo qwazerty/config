@@ -14,6 +14,19 @@ else
     export PAGER='less'
 fi
 
+# Color variables for PS1
+cb='\[\e[0;36m\]'
+cr='\[\e[0;31m\]'
+cR='\[\e[1;31m\]'
+cB='\[\e[1;34m\]'
+cG='\[\e[1;30m\]'
+cp='\[\e[1;35m\]'
+clr='\[\e[0m\]'
+
+# Bash prompt
+PS1="${cb}[\t] ${cR}[\u@\h:${cB}\W] ${cp}[\$?]\n\
+${cR}\$${clr} "
+
 # Common aliases
 alias us='setxkbmap us'
 alias fr='setxkbmap fr'
@@ -24,7 +37,7 @@ alias ll='ls -l --color'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias e='vim'
-alias c='chromium-browser || google-chrome'
+alias c=' google-chrome || chromium-browser'
 
 # ChmoXXX
 alias chmox='chmod +x'
@@ -32,8 +45,8 @@ alias chmox='chmod +x'
 # Makefile aliases
 alias m='make'
 alias nake='make'
-alias am='alsamixer'
 alias cm='./configure && make'
+alias bcm='./bootstrap && ./configure && make -j'
 
 # Haha like I would use emacs
 alias emacs='emacs -nw'
@@ -49,11 +62,12 @@ alias gstat='git status'
 alias gshow='git ls-tree --name-only -r HEAD'
 
 # EPITA related aliases
-alias z='i3lock -c 420042 || \
-    zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
+alias z='zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO" || \
+    i3lock -c 420042'
 
 # Programming aliases
-alias valgrind='valgrind --tool=memcheck --leak-check=yes --show-reachable=yes'
+alias valgrind='valgrind -v --leak-check=full --show-reachable=yes \
+    --track-fds=yes --track-origins=yes'
 # Dat flags
 alias gccf='gcc -std=c99 -pedantic -Wall \
     -Wno-missing-braces -Wextra -Wno-missing-field-initializers -Wformat=2 \
@@ -66,22 +80,9 @@ alias gccf='gcc -std=c99 -pedantic -Wall \
     -O0 \
     -fno-omit-frame-pointer -ffloat-store -fno-common -fstrict-aliasing'
 
+# Start ssh-agent
+alias ssha='eval $(ssh-agent) && ssh-add'
+
 # Custom aliases
-alias ds1='xrandr --auto --output VGA1 --mode 1280x1024 --left-of LVDS1'
-alias ds2='xrandr --auto --output VGA1 --mode 1680x1050 --right-of LVDS1'
-alias mmount1='sudo mount /dev/sdb1 /mnt'
-alias mmount2='sudo mount /dev/sda2 /mnt'
-alias mumout='sudo umount /mnt'
-
-# Color variables for PS1
-cb='\[\e[0;36m\]'
-cr='\[\e[0;31m\]'
-cR='\[\e[1;31m\]'
-cB='\[\e[1;34m\]'
-cG='\[\e[1;30m\]'
-cp='\[\e[1;35m\]'
-clr='\[\e[0m\]'
-
-# Bash prompt
-PS1="${cb}[\t] ${cR}[\u@\h:${cB}\W] ${cp}[\$?]\n\
-${cR}\$${clr} "
+alias am='alsamixer'
+alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
