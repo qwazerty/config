@@ -46,7 +46,9 @@ alias chmox='chmod +x'
 alias m='make'
 alias nake='make'
 alias cm='./configure && make'
-alias bcm='./bootstrap && ./configure && make -j'
+alias bcm='make distclean; ./bootstrap && ./configure && make'
+alias bcdm='make distclean; ./bootstrap && ./configure -with-debug && make'
+alias mclm='make clean && make'
 
 # Haha like I would use emacs
 alias emacs='emacs -nw'
@@ -62,8 +64,8 @@ alias gstat='git status'
 alias gshow='git ls-tree --name-only -r HEAD'
 
 # EPITA related aliases
-alias z='zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO" || \
-    i3lock -c 420042'
+alias z='i3lock -c 420042 || \
+    zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
 
 # Programming aliases
 alias valgrind='valgrind -v --leak-check=full --show-reachable=yes \
