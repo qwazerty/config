@@ -26,6 +26,8 @@ clr='\[\e[0m\]'
 # Bash prompt
 PS1="${cb}[\t] ${cR}[\u@\h:${cB}\W] ${cp}[\$?]\n\
 ${cR}\$${clr} "
+# For testing purpose
+#PS1='\d \h \H \n \s \u \w \W \$ \012 \\ \[ \]'
 
 # Common aliases
 alias us='setxkbmap us'
