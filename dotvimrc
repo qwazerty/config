@@ -58,6 +58,9 @@ set background=dark
 " Set normal backspace behaviour
 set backspace=2
 
+" Allow to open files in the current directory
+set autochdir
+
 " CursorLine only on insert mode
 au InsertEnter * set cursorline
 au InsertLeave * set nocursorline

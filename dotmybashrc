@@ -24,7 +24,7 @@ cp='\[\e[1;35m\]'
 clr='\[\e[0m\]'
 
 # Bash prompt
-PS1="${cb}[\t] ${cR}[\u@\h:${cB}\W] ${cp}[\$?]\n\
+PS1="\n${cb}[\t] ${cR}[\u@\h:${cB}\w] ${cp}[\$?]\n\
 ${cR}\$${clr} "
 # For testing purpose
 #PS1='\d \h \H \n \s \u \w \W \$ \012 \\ \[ \]'
@@ -83,6 +83,7 @@ alias gccf='gcc -std=c99 -pedantic -Wall \
     -ggdb3 -g \
     -O0 \
     -fno-omit-frame-pointer -ffloat-store -fno-common -fstrict-aliasing'
+alias retag='ctags --tag-relative -Rf.git/tags'
 
 # Start ssh-agent
 alias ssha='eval $(ssh-agent) && ssh-add'
