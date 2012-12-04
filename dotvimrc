@@ -20,10 +20,10 @@ set expandtab
 autocmd FileType make set noexpandtab
 
 " Just a random comment
-set copyindent
+"set copyindent
 
 " And another one
-set preserveindent
+"set preserveindent
 
 " Set indent
 set tabstop=8
@@ -54,6 +54,7 @@ set background=dark
 
 " Remove latency when leaving insertmode
 "set timeoutlen=0
+set timeoutlen=1
 
 " Set normal backspace behaviour
 set backspace=2
@@ -106,14 +107,30 @@ match ExtraWhitespace /\s\+$\| \+\ze\t\| [^\t]\zs\t\+\| \(\s*\n\)\+\%$/
 
 " Removes trailing spaces
 function TrimWhiteSpace()
-  let l = line(".")
-  let c = col(".")
-  %s/\s*$\| \(\s*\n\)\+\%$//
-  call cursor(l, c)
+    let l = line(".")
+    let c = col(".")
+    %s/\s*$\| \(\s*\n\)\+\%$//
+    call cursor(l, c)
 :endfunction
 
 " Map removing trailing spaces on <F12>
 map <F12> :call TrimWhiteSpace()<CR>
+
+" Generate headers
+function Headers()
+    let l = line(".")
+    let c = col(".")
+    let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+    execute "normal! ggO#ifndef " . gatename
+    execute "normal! o# define " . gatename
+    execute "normal! o"
+    execute "normal! Go#endif /* !" . gatename . " */"
+    execute "normal! O"
+    call cursor(l, c)
+:endfunction
+
+" Map generate headers on C-<F12>
+map <C-F12> :call Headers()<CR>
 
 " Unmap help
 imap <F1> <Nop>
