@@ -7,6 +7,8 @@
 " utf-8 encoding
 set enc=utf-8
 
+set t_Co=256
+
 " Enable syntax highlight
 syntax on
 
@@ -61,6 +63,10 @@ set backspace=2
 
 " Allow to open files in the current directory
 set autochdir
+
+" Show autocompletion in command line
+set wildmenu
+set wildmode=full
 
 " CursorLine only on insert mode
 au InsertEnter * set cursorline

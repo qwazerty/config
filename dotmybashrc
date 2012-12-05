@@ -23,11 +23,35 @@ cG='\[\e[1;30m\]'
 cp='\[\e[1;35m\]'
 clr='\[\e[0m\]'
 
+function print_return()
+{
+    case $1 in
+    0)
+        echo -e "\e[1;38;5;46m[OK]";;
+    127)
+        echo -e "\e[1;38;5;208m[404 NOT FOUND]";;
+    139)
+        echo -e "\e[1;38;5;196m[THIS IS SEGFAULT! N00B]";;
+    *)
+        echo -e "\e[1;35m[$1]";;
+    esac
+}
+
+function rec_path()
+{
+    if [ `echo "$2$1" | wc -c` -lt 30 ]; then
+        echo "$2$1"
+    else
+        rec_path `echo "$1" | cut -d'/' -f2-` '../'
+    fi
+}
+
+# Save the return value of the previous command
+PROMPT_COMMAND='ret=$?'
+
 # Bash prompt
-PS1="\n${cb}[\t] ${cR}[\u@\h:${cB}\w] ${cp}[\$?]\n\
-${cR}\$${clr} "
-# For testing purpose
-#PS1='\d \h \H \n \s \u \w \W \$ \012 \\ \[ \]'
+PS1="\n${cb}[\t] ${cR}[\u@\h:${cB}\$(rec_path \w)] \
+\$(print_return \$ret)\n${cR}\$${clr} "
 
 # Common aliases
 alias us='setxkbmap us'
