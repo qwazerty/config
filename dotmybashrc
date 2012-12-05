@@ -30,6 +30,8 @@ function print_return()
         echo -e "\e[1;38;5;46m[OK]";;
     127)
         echo -e "\e[1;38;5;208m[404 NOT FOUND]";;
+    130)
+        echo -e "\e[1;38;5;208m[!@#!@)_#*(]";;
     139)
         echo -e "\e[1;38;5;196m[THIS IS SEGFAULT! N00B]";;
     *)
