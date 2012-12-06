@@ -31,9 +31,13 @@ function print_return()
     127)
         echo -e "\e[1;38;5;208m[404 NOT FOUND]";;
     130)
-        echo -e "\e[1;38;5;208m[!@#!@)_#*(]";;
+        echo -e "\e[1;38;5;106m[!@#$%]";;
+    137)
+        echo -e "\e[1;38;5;129m[FATALITY]";;
     139)
         echo -e "\e[1;38;5;196m[THIS IS SEGFAULT! N00B]";;
+    143)
+        echo -e "\e[1;38;5;196m[HEADSHOT]";;
     *)
         echo -e "\e[1;35m[$1]";;
     esac
@@ -52,7 +56,7 @@ function rec_path()
 PROMPT_COMMAND='ret=$?'
 
 # Bash prompt
-PS1="\n${cb}[\t] ${cR}[\u@\h:${cB}\$(rec_path \w)] \
+PS1="\n${cb}[\t] ${cR}[\u@\h:${cB}\w] \
 \$(print_return \$ret)\n${cR}\$${clr} "
 
 # Common aliases
@@ -94,6 +98,7 @@ alias gshow='git ls-tree --name-only -r HEAD'
 # EPITA related aliases
 alias z='i3lock -c 420042 || \
     zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
+alias gen='~/tools/gen.sh'
 
 # Programming aliases
 alias valgrind='valgrind -v --leak-check=full --show-reachable=yes \

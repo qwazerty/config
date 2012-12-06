@@ -1,4 +1,5 @@
 general {
+    output_format = "i3bar"
     colors = true
     interval = 1
 }
@@ -6,7 +7,6 @@ general {
 order += "disk /"
 order += "ipv6"
 order += "run_watch DHCP"
-#order += "run_watch VPN"
 order += "wireless wlan0"
 order += "ethernet eth0"
 order += "load"
@@ -35,6 +35,7 @@ ethernet eth0 {
 
 battery 0 {
     format = "%status %percentage %remaining"
+    last_full_capacity = true
 }
 
 run_watch DHCP {
@@ -58,6 +59,5 @@ cpu_temperature 0 {
 }
 
 disk "/" {
-    # Hack to display randomz lol
-    format = "[Qwazerty-laptop] | %used/%total"
+    format = "%used/%total"
 }
