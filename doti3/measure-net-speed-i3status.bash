@@ -24,6 +24,6 @@ do
   dat=$(~/.i3/measure-net-speed.bash)
   dat="{ \"full_text\": \"${dat}\" },"
   host="[`hostname`]"
-  host="[{ \"full_text\": \"${host}\", \"color\":\"#FF6942\" },"
+  host="[{ \"full_text\": \"${host}\", \"color\":\"#FF1010\" },"
   echo "${line/[/${host}${dat}}" || exit 1
 done)
