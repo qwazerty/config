@@ -4,8 +4,8 @@ set expandtab
 " Set indent
 set tabstop=8
 
-" Set another indent
+" Set indent spaces
 set shiftwidth=4
 
-" Yet another indent
+" Indent spaces when <tab>
 set softtabstop=4

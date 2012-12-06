@@ -22,3 +22,9 @@ map <F2> :set relativenumber<CR>
 
 " Map set nonumber command
 map <F3> :set nonumber<CR>
+
+" Map next buffer
+map <C-H> :bp<CR>
+
+" Map next buffer
+map <C-L> :bn<CR>
