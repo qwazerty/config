@@ -18,12 +18,12 @@
 #   status_command measure-net-speed-i3status.bash
 # }
 
-i3status | (read line && echo $line && while :
+i3status | while :
 do
-  read line
-  dat=$(~/.i3/measure-net-speed.bash)
-  dat="{ \"full_text\": \"${dat}\" },"
-  host="[`hostname`]"
-  host="[{ \"full_text\": \"${host}\", \"color\":\"#`~/.i3/time-to-color.py`\" },"
-  echo "${line/[/${host}${dat}}" || exit 1
-done)
+    read line
+    dat=$(~/.i3/measure-net-speed.bash)
+    dat="{ \"full_text\": \"${dat}\" },"
+    host="[`hostname`]"
+    host="[{ \"full_text\": \"${host}\", \"color\":\"#`~/.i3/time-to-color.py`\" },"
+    echo "${line/[/${host}${dat}}" || exit 1
+done

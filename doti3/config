@@ -133,5 +133,5 @@ bindsym XF86AudioNext exec ~/.i3/touchpadon.sh
 # finds out, if available)
 bar {
     #status_command i3status
-    status_command ~/.i3/measure-net-speed-i3status.bash
+    status_command ~/.i3/wrapper-i3status.bash
 }
