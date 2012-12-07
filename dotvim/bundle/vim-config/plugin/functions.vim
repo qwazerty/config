@@ -13,7 +13,7 @@ map <F12> :call TrimWhiteSpace()<CR>
 function Headers()
     let l = line(".")
     let c = col(".")
-    let gatename = substitute(toupper(expand("%:t")), "\\.", "_", "g")
+    let gatename = substitute(toupper(expand("%:t")), "[^A-Za-z0-9]", "_", "g")
     execute "normal! ggO#ifndef " . gatename
     execute "normal! o# define " . gatename
     execute "normal! o"
