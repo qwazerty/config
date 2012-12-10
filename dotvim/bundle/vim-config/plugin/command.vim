@@ -1,4 +1,7 @@
-" utf-8 encoding
+" Handle utf-8
+set encoding=utf-8
+
+" File utf-8 encoding
 set fileencoding=utf-8
 
 " Force vim instead of vi
