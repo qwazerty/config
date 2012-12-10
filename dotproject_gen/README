@@ -1,0 +1,21 @@
+README
+======
+
+Make by
+Kevin "qwazerty" Houdebert
+houdeb_k
+EPITA 2015 - ACDC
+
+This script purpose is to easily generate all the needed files to start a
+project such as Makefile, Doxyfile, etc...
+
+To use this script, create an empty project folder, and call the script with
+the project name as argument. For example:
+
+42sh$ mkdir test-project
+42sh$ cd test-project
+42sh$ ~/project_gen/gen.sh test_project
+42sh$ ls
+AUTHORS  Makefile.am  README  bootstrap  configure.ac  doc  src
+
+With 42sh$ representing your prompt.
