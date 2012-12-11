@@ -14,7 +14,11 @@ else
     export PAGER='less'
 fi
 
+export LANG=en_US.UTF-8
+export TERM=rxvt-unicode
+
 # Color variables for PS1
+rt='\[\e[0;38;5;\$(`echo $(($(date +%H) * 6 + $(date +%M) + 17))`)m\]'
 cb='\[\e[0;36m\]'
 cr='\[\e[0;31m\]'
 cR='\[\e[1;31m\]'
@@ -43,6 +47,7 @@ function print_return()
     esac
 }
 
+# Compute the path if is too long (unused)
 function rec_path()
 {
     if [ `echo "$2$1" | wc -c` -lt 30 ]; then
@@ -56,7 +61,7 @@ function rec_path()
 PROMPT_COMMAND='ret=$?'
 
 # Bash prompt
-PS1="\n${cb}[\t] ${cR}[\u@\h:${cB}\w] \
+PS1="\n${rt}[\t] ${cR}[\u@\h:${cB}\w] \
 \$(print_return \$ret)\n${cR}\$${clr} "
 
 # Common aliases
