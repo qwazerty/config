@@ -1,6 +1,10 @@
 " Remap : on ;
 nmap ; :
 
+" Allow to move in wrapped lines
+noremap j gj
+noremap k gk
+
 " HARDCORE MODE! Unbind arrow keys
 imap <UP> <Nop>
 imap <DOWN> <Nop>
