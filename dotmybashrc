@@ -14,17 +14,16 @@ else
     export PAGER='less'
 fi
 
-export LANG=en_US.UTF-8
-export TERM=rxvt-unicode
-
 # Color variables for PS1
-rt='\[\e[0;38;5;\$(`echo $(($(date +%H) * 6 + $(date +%M) + 17))`)m\]'
+rt='\[\e[0;38;5;\$(`echo $(($(date +%-H) * 6 + $(date +%-M) + 17))`)m\]'
+#rt='\[\e[0;36m\]'
 cb='\[\e[0;36m\]'
 cr='\[\e[0;31m\]'
 cR='\[\e[1;31m\]'
 cB='\[\e[1;34m\]'
 cG='\[\e[1;30m\]'
 cp='\[\e[1;35m\]'
+# Add user/path color brackets color
 clr='\[\e[0m\]'
 
 function print_return()
@@ -39,7 +38,7 @@ function print_return()
     137)
         echo -e "\e[1;38;5;129m[FATALITY]";;
     139)
-        echo -e "\e[1;38;5;196m[THIS IS SEGFAULT! N00B]";;
+        echo -e "\e[1;38;5;196m[THIS IS SEGFAULT!]";;
     143)
         echo -e "\e[1;38;5;196m[HEADSHOT]";;
     *)
@@ -57,12 +56,9 @@ function rec_path()
     fi
 }
 
-# Save the return value of the previous command
-PROMPT_COMMAND='ret=$?'
-
 # Bash prompt
 PS1="\n${rt}[\t] ${cR}[\u@\h:${cB}\w] \
-\$(print_return \$ret)\n${cR}\$${clr} "
+\$(print_return \$?)\n${cR}\$${clr} "
 
 # Common aliases
 alias us='setxkbmap us'
