@@ -67,8 +67,6 @@ alias ls='ls --color'
 alias l='ls --color'
 alias la='ls -la --color'
 alias ll='ls -l --color'
-alias ..='cd ..'
-alias ...='cd ../..'
 alias e='vim'
 alias c=' google-chrome || chromium-browser'
 

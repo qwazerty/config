@@ -1,15 +1,10 @@
-AC_INIT([zik-end], [1.0])
+AC_INIT([_PROJECT_], [1.0])
 AC_CONFIG_AUX_DIR(build-aux)
 
 AC_CONFIG_FILES(Makefile doc/Makefile
-                src/writer/Makefile src/reader/Makefile)
+                src/module/Makefile)
 
-AM_CXXFLAGS="-Wall -Wextra -Werror -std=c++0x -pedantic \
-    -L/usr/lib/x86_64-linux-gnu/ \
-    -lQtGui -lQtCore -lpthread \
-    -L/usr/lib/x86_64-linux-gnu/ -lQtGui -lQtCore -lpthread \
-    -I/usr/share/qt/mkspecs/linux-g++-64 \
-    -I/usr/include/QtCore -I/usr/include/QtGui -I/usr/include -I."
+AM_CXXFLAGS="-Wall -Wextra -Werror -std=c++0x -pedantic"
 
 AC_ARG_WITH([debug])
 AC_ARG_WITH([clang])

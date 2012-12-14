@@ -2,7 +2,7 @@
 function TrimWhiteSpace()
     let l = line(".")
     let c = col(".")
-    %s/\s*$\| \(\s*\n\)\+\%$//
+    %s/\(\s*\n\)\+\%$\| \s*$\//
     call cursor(l, c)
 endfunction
 
@@ -22,5 +22,5 @@ function Headers()
     call cursor(l, c)
 endfunction
 
-" Map generate headers on C-<F12>
-map <C-F12> :call Headers()<CR>
+" Map generate headers on <F11>
+map <F11> :call Headers()<CR>
