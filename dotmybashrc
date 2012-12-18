@@ -56,9 +56,12 @@ function rec_path()
     fi
 }
 
+# Get the return value of previous command before anything
+trap 'ret_=$?' DEBUG
+
 # Bash prompt
 PS1="\n${rt}[\t] ${cR}[\u@\h:${cB}\w] \
-\$(print_return \$?)\n${cR}\$${clr} "
+\$(print_return \${ret_})\n${cR}\$${clr} "
 
 # Common aliases
 alias us='setxkbmap us'

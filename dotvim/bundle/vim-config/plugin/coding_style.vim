@@ -5,4 +5,4 @@ set colorcolumn=80
 highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Show trailing whitespace and spaces before a tab:
-match ExtraWhitespace /\s\+$\| \+\ze\t\| [^\t]\zs\t\+\| \(\s*\n\)\+\%$/
+match ExtraWhitespace /\s\+$\|^\%$\|\s\+\ze\t\|[^\t]\zs\t\+/
