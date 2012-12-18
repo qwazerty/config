@@ -1,14 +1,3 @@
-" Removes trailing spaces
-function TrimWhiteSpace()
-    let l = line(".")
-    let c = col(".")
-    %s/\(\s*\n\)\+\%$\| \s*$\//
-    call cursor(l, c)
-endfunction
-
-" Map removing trailing spaces on <F12>
-map <F12> :call TrimWhiteSpace()<CR>
-
 " Generate headers
 function Headers()
     let gatename = substitute(toupper(expand("%:t")), "[^A-Za-z0-9]", "_", "g")
@@ -19,9 +8,10 @@ function Headers()
     call cursor(4, 0)
 endfunction
 
-" Map generate headers on <F11>
-map <F11> :call Headers()<CR>
+" Map generate headers on <F12>
+map <F12> :call Headers()<CR>
 
+" Generate c++ class
 function Class()
     let classname = substitute(expand("%:t:r"), "\[_-]\\(.\\)", "\\u\\1", "g")
     let classname = substitute(classname, "^.*", "\\u&", "g")
@@ -48,5 +38,5 @@ function Class()
     execute "normal! o"
 endfunction
 
-" Map generate headers on <F10>
-map <F10> :call Class()<CR>
+" Map generate headers on <F11>
+map <F11> :call Class()<CR>
