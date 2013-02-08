@@ -8,6 +8,7 @@
 
 # Environment
 export EDITOR='vim'
+
 if [ -e /usr/bin/vimpager ]; then
     export PAGER='vimpager'
 else
@@ -72,6 +73,7 @@ alias la='ls -la --color'
 alias ll='ls -l --color'
 alias e='vim'
 alias c=' google-chrome || chromium-browser'
+alias j='jobs'
 
 # ChmoXXX
 alias chmox='chmod +x'

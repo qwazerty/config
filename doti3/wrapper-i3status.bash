@@ -23,7 +23,9 @@ do
     read line
     dat=$(~/.i3/measure-net-speed.bash)
     dat="{ \"full_text\": \"${dat}\" },"
+    keymap=`setxkbmap -query | grep 'layout' | awk -e '{ print $2 }'`
+    keymap="{ \"full_text\": \"${keymap}\" },"
     host="[`hostname`]"
     host="[{ \"full_text\": \"${host}\", \"color\":\"#`~/.i3/time-to-color.py`\" },"
-    echo "${line/[/${host}${dat}}" || exit 1
+    echo "${line/[/${host}${dat}${keymap}}" || exit 1
 done
