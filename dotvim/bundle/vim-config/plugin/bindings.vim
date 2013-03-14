@@ -16,7 +16,7 @@ nmap <LEFT> <Nop>
 nmap <RIGHT> <Nop>
 
 " Map split buffer start cmd on space
-map <SPACE> <C-W>
+map <SPACE> <C-W><C-W>
 
 " Unmap help
 imap <F1> <Nop>
