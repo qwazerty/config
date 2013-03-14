@@ -1,0 +1,43 @@
+! ==================
+!   Global Settings
+! ==================
+
+! - Fonts
+URxvt.font:                 -*-Terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+URxvt*boldfont:             -*-Terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+
+! - Scroll Bar
+URxvt*saveLines:            100000
+URxvt*scrollBar:            false
+
+! ==============
+!     Colors
+! ==============
+
+! -- Background color
+URxvt*background:           black
+
+! -- Foreground color
+URxvt*foreground:           white
+
+! - Cursor color
+URxvt*cursorColor:          #DCDCCC
+
+
+! - 8/16 Colors
+URxvt*color0:               #101010
+URxvt*color1:               #f11a11
+URxvt*color2:               #93f91d
+URxvt*color3:               #ffd00a
+URxvt*color4:               #004f9e
+URxvt*color5:               #ec0048
+URxvt*color6:               #2aa7e7
+URxvt*color7:               #f2f2f2
+URxvt*color8:               #1d202f
+URxvt*color9:               #ff361e
+URxvt*color10:              #ffc005
+URxvt*color11:              #ffd700
+URxvt*color12:              #0071ff
+URxvt*color13:              #ef0051
+URxvt*color14:              #4bb8fd
+URxvt*color15:              #d0a0f0

@@ -1,14 +1,10 @@
 " Enable syntax highlight
 syntax on
 
-" Set 256 color
-set t_Co=256
+hi Visual ctermbg=20
 
 " Change LineNumber color
 hi LineNr cterm=none ctermfg=yellow
-
-" Set background color
-hi Normal ctermbg=0
 
 " Set cursorline color
 hi CursorLine cterm=none ctermbg=234
