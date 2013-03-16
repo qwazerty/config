@@ -36,8 +36,8 @@ alias gstat='git status'
 alias gshow='git ls-tree --name-only -r HEAD'
 
 # EPITA related aliases
-alias z='i3lock -c 420042 \
-    || zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
+alias z='i3lock -c 420042'
+alias zz='zlock -immed -text "Run little kitty. RUN!" -pwtext "XOXOXOXO"'
 alias gen='~/.project_gen/gen.sh'
 
 # Programming aliases

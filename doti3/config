@@ -122,6 +122,7 @@ bindsym $mod+r mode "resize"
 assign [class="DClock"] 10
 assign [class="Xm"] 10
 for_window [class="Zlock"] floating enable
+for_window [class="track"] floating enable
 
 bindsym XF86AudioMute exec ~/.i3/amute.sh
 bindsym XF86AudioLowerVolume exec ~/.i3/masterlower.sh
