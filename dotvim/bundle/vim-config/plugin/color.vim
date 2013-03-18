@@ -9,6 +9,9 @@ hi LineNr cterm=none ctermfg=yellow
 " Set cursorline color
 hi CursorLine cterm=none ctermbg=234
 
+" Set 80 columns color
+hi ColorColumn cterm=none ctermbg=53
+
 " Set TODO color
 hi Todo cterm=bold ctermfg=Magenta ctermbg=Black
 
