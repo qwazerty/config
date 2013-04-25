@@ -38,5 +38,10 @@ function Class()
     execute "normal! o"
 endfunction
 
+function TCTabbing()
+    set sts=2
+    set sw=2
+endfunction
+
 " Map generate headers on <F11>
 map <F11> :call Class()<CR>
