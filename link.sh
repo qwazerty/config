@@ -16,3 +16,4 @@ ln -fs $var/doti3 ~/.i3
 ln -fs $var/dotvim ~/.vim
 ln -fs $var/dotproject_gen ~/.project_gen
 ln -fs $var/dotXresources ~/.Xresources
+ln -fs $var/dotxinitrc ~/.xinitrc

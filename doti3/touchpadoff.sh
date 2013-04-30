@@ -1,1 +1,0 @@
-synclient TouchPadOff=1
