@@ -3,25 +3,25 @@
 ! ==================
 
 ! - Fonts
-URxvt.font:                 -*-Terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
-URxvt*boldfont:             -*-Terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+!URxvt.font:                 -*-Terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
+!URxvt*boldfont:             -*-Terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
 
 ! - Scroll Bar
-URxvt*saveLines:            100000
-URxvt*scrollBar:            false
+*saveLines:            100000
+*scrollBar:            false
 
 ! ==============
 !     Colors
 ! ==============
 
 ! -- Background color
-URxvt*background:           black
+*background:           black
 
 ! -- Foreground color
-URxvt*foreground:           white
+*foreground:           white
 
 ! - Cursor color
-URxvt*cursorColor:          #DCDCCC
+*cursorColor:          #DCDCCC
 
 
 ! - 8/16 Colors

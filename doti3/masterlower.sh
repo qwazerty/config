@@ -1,3 +1,3 @@
 #! /bin/bash
 
-amixer -c 0 set Master 1- unmute
+amixer -c 0 set Master 5- unmute

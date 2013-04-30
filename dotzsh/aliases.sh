@@ -59,6 +59,8 @@ alias retag='ctags --tag-relative -Rf.git/tags'
 
 # Start ssh-agent
 alias ssha='eval $(ssh-agent) && ssh-add'
+alias pt='ping -c 3 www.google.com'
+alias ptt='ping -c 3 www.acu.epita.fr'
 
 # Custom aliases
 alias am='alsamixer'
