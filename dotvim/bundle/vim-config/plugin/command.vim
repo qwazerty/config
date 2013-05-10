@@ -24,7 +24,6 @@ set hlsearch
 
 " Add Scroll limit to scroll before end of window
 set scrolloff=99
-
 " Fix background for syntax color
 set background=dark
 
@@ -38,4 +37,5 @@ set backspace=2
 set autochdir
 
 " Show autocompletion in command line
-set wildmode=list:full:longest
+set wildmenu
+set wildmode=full
