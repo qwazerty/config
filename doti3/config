@@ -118,22 +118,28 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Assign custom user
+# Custom assign workspace
 assign [class="DClock"] 10
 assign [class="Xm"] 10
 assign [class="jetbrains-idea-ce"] 1
 assign [class="Fceux"] 10
+
+# Custom floating windows
 for_window [class="Zlock"] floating enable
 for_window [class="track"] floating enable
 for_window [class="com-intellij-rt-execution-application-AppMain"] floating enable
 for_window [class="qemu-system-i386"] floating enable
 
+# Custom bind
 bindsym XF86AudioMute exec ~/.i3/amute.sh
 bindsym XF86AudioLowerVolume exec ~/.i3/masterlower.sh
 bindsym XF86AudioRaiseVolume exec ~/.i3/masterraise.sh
 
 bindsym XF86AudioPlay exec ~/.i3/zlock.sh
 bindsym XF86AudioPrev exec ~/.i3/touchpad.sh
+
+# Custom disable focus mouse
+focus_follows_mouse no
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
