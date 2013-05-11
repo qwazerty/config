@@ -8,9 +8,6 @@ function Headers()
     call cursor(4, 0)
 endfunction
 
-" Map generate headers on <F12>
-map <F12> :call Headers()<CR>
-
 " Generate c++ class
 function Class()
     let classname = substitute(expand("%:t:r"), "\[_-]\\(.\\)", "\\u\\1", "g")
@@ -38,10 +35,22 @@ function Class()
     execute "normal! o"
 endfunction
 
-function TCTabbing()
-    set sts=2
-    set sw=2
+function ResetArrow()
+    unmap <UP>
+    unmap <DOWN>
+    unmap <LEFT>
+    unmap <RIGHT>
 endfunction
+
+function SetArrow()
+    map <UP> <C-W>-
+    map <DOWN> <C-W>+
+    map <LEFT> <C-W><
+    map <RIGHT> <C-W>>
+endfunction
+
+" Map generate headers on <F12>
+map <F12> :call Headers()<CR>
 
 " Map generate headers on <F11>
 map <F11> :call Class()<CR>
