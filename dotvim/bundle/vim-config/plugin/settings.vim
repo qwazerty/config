@@ -39,4 +39,4 @@ set autochdir
 
 " Show autocompletion in command line
 set wildmenu
-set wildmode=full
+set wildmode=longest,full
