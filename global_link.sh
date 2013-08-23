@@ -1,4 +1,13 @@
 #! /bin/sh
+echo "Use this if you want to install conf for all users (run as root)"
+read -p "Are you sure? (y/n) " REPLY
+case $REPLY in
+    y|Y ) ;;
+    * ) exit 1;;
+esac
+if [ `whoami` != "root" ]; then
+    echo "You are not root!"
+fi
 
 var=`pwd`
 mkdir -p ~/.config

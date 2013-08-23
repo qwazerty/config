@@ -3,10 +3,9 @@
 #################################
 # dotmybashrc config file       #
 # by Kevin "qwazerty" Houdebert #
-# houdeb_k / EPITA 2015         #
 #################################
 
 # Load all files in ~/.zsh/
-for file in ~/.zsh/*; do
+for file in ~/.zsh/*.zsh; do
     source $file
 done
