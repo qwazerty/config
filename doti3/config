@@ -11,8 +11,6 @@
 
 set $mod Mod4
 
-bindsym $mod+m exec /home/qwazerty/.i3/keymap.sh
-
 # font for window titles. ISO 10646 = Unicode
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 
@@ -131,6 +129,8 @@ for_window [class="com-intellij-rt-execution-application-AppMain"] floating enab
 for_window [class="qemu-system-i386"] floating enable
 
 # Custom bind
+bindsym $mod+m exec /home/qwazerty/.i3/keymap.sh
+
 bindsym XF86AudioMute exec ~/.i3/amute.sh
 bindsym XF86AudioLowerVolume exec ~/.i3/masterlower.sh
 bindsym XF86AudioRaiseVolume exec ~/.i3/masterraise.sh

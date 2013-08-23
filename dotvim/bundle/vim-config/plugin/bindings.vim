@@ -31,3 +31,6 @@ map <C-H> :bp<CR>
 
 " Map next buffer
 map <C-L> :bn<CR>
+
+" Delete current buffer
+map <C-J> :bd<CR>

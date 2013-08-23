@@ -10,5 +10,9 @@ command HH execute "edit " . expand('%:t:r') . ".hh"
 command HXX execute "edit " . expand('%:t:r') . ".hxx"
 
 " Bind Arrow reset
-command ResetArrow execute "call ResetArrow()"
-command SetArrow execute "call SetArrow()"
+command ArrowReset execute "call ArrowReset()"
+command ArrowSet execute "call ArrowSet()"
+
+" Bind generate headers
+command Header execute "call Headers()"
+command Class execute "call Class()"
