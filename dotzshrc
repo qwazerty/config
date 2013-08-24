@@ -10,7 +10,7 @@ ZSH=/etc/zsh/plugins/oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="qwazerty"
+ZSH_THEME="gentoo"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -44,6 +44,8 @@ ZSH_THEME="qwazerty"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+export TERM=rxvt
 
 # Load all files in ~/.zsh/
 for file in /etc/zsh/plugins/*.zsh; do
