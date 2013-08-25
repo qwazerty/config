@@ -4,13 +4,13 @@
 #################################
 
 # Path to your oh-my-zsh configuration.
-ZSH=/etc/zsh/plugins/oh-my-zsh
+ZSH=~/.zsh/oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="qwazerty"
+ZSH_THEME="gentoo"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
