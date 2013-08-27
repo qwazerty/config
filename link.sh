@@ -8,6 +8,7 @@ rm -rf ~/.zsh
 rm -rf ~/.i3
 rm -rf ~/.vim
 rm -rf ~/.project_gen
+rm -rf ~/.config/i3status
 ln -fs $var/dotzsh ~/.zsh
 ln -fs $var/dotzshrc ~/.zshrc
 ln -fs $var/dotvimrc ~/.vimrc
@@ -18,3 +19,8 @@ ln -fs $var/dotvim ~/.vim
 ln -fs $var/dotproject_gen ~/.project_gen
 ln -fs $var/dotXresources ~/.Xresources
 ln -fs $var/dotxinitrc ~/.xinitrc
+
+if [ `whoami` = 'root' ]; then
+    mkdir -p /etc/zsh/plugins/
+    cp dotzsh/* /etc/zsh/plugins/ -r
+fi
