@@ -22,14 +22,3 @@ cp -r dotvimrc ~/.vimrc
 cp -r dotvimpagerrc ~/.vimpagerrc
 cp -r dotXresources ~/.Xresources
 cp -r dotxinitrc ~/.xinitrc
-
-if [ `whoami` = 'root' ]; then
-    mkdir -p /etc/zsh/plugins/
-    cp dotzsh/* /etc/zsh/plugins/ -r
-fi
-
-if [ -e /etc/zsh/plugins ]; then
-    sed -i -e 's/^ZSH=.*$/ZSH=\/etc\/zsh\/plugins\/oh-my-zsh/' ~/.zshrc
-else
-    sed -i -e 's/^ZSH=.*$/ZSH=~\/.zsh\/oh-my-zsh/' ~/.zshrc
-fi

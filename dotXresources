@@ -23,7 +23,6 @@ URxvt*foreground:           white
 ! - Cursor color
 *cursorColor:          #DCDCCC
 
-
 ! - 8/16 Colors
 URxvt*color0:               #101010
 URxvt*color1:               #f11a11
@@ -41,3 +40,27 @@ URxvt*color12:              #0071ff
 URxvt*color13:              #ef0051
 URxvt*color14:              #4bb8fd
 URxvt*color15:              #d0a0f0
+
+! -- Background color
+xterm*background:           black
+
+! -- Foreground color
+xterm*foreground:           white
+
+! - 8/16 Colors
+xterm*color0:               #101010
+xterm*color1:               #f11a11
+xterm*color2:               #93f91d
+xterm*color3:               #ffd00a
+xterm*color4:               #004f9e
+xterm*color5:               #ec0048
+xterm*color6:               #2aa7e7
+xterm*color7:               #f2f2f2
+xterm*color8:               #1d202f
+xterm*color9:               #ff361e
+xterm*color10:              #ffc005
+xterm*color11:              #ffd700
+xterm*color12:              #0071ff
+xterm*color13:              #ef0051
+xterm*color14:              #4bb8fd
+xterm*color15:              #d0a0f0
