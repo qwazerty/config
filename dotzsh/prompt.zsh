@@ -1,25 +1,18 @@
 autoload -U colors && colors
+setopt prompt_subst
 
 function prompt_char {
     if [ $UID -eq 0 ]; then echo "#"; else echo $; fi
 }
 
-autoload -Uz vcs_info
-
-zstyle ':vcs_info:*' stagedstr '%F{28}●'
-zstyle ':vcs_info:*' unstagedstr '%F{11}●'
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:(sv[nk]|bzr):*' branchformat '%b%F{1}:%F{11}%r'
-zstyle ':vcs_info:*' enable git svn
-
-precmd () {
-    vcs_info
-    zstyle ':vcs_info:*' formats '-%F{blue}[%F{red}%u%b%c%F{blue}]%F{red}'
+function parse_git_branch {
+    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
+    echo %{$fg_bold[red]%}"("${ref#refs/heads/}")"%{$reset_color%}
 }
 
-setopt prompt_subst
+function clock {
+    echo "%(?.%{$fg_bold[blue]%}.%{$fg[green]%})%*%{$reset_color%}"
+}
 
-PROMPT="%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) ${vcs_info_msg_0_}%_$(prompt_char)%{$reset_color%} "
-
-ZSH_THEME_GIT_PROMPT_PREFIX="("
-ZSH_THEME_GIT_PROMPT_SUFFIX=") "
+export PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) ${parse_git_branch}$(prompt_char)%{$reset_color%} '
+export RPROMPT='$(parse_git_branch) $(clock)'

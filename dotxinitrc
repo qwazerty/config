@@ -1,5 +1,1 @@
-xset r rate 300 100
-xrdb ~/.Xresources
-setxkbmap us
-xrandr --output HDMI1 --auto --right-of HDMI3
 exec i3
