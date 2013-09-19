@@ -2,7 +2,9 @@ autoload -U colors && colors
 setopt prompt_subst
 
 function prompt_char {
-    if [ $UID -eq 0 ]; then echo "#"; else echo $; fi
+    echo -n "%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})"
+    if [ $UID -eq 0 ]; then echo -n "#"; else echo -n $; fi
+    echo -n "%{$reset_color%}"
 }
 
 function parse_git_branch {
@@ -11,7 +13,7 @@ function parse_git_branch {
 }
 
 function clock {
-    echo "%(?.%{$fg_bold[blue]%}.%{$fg[green]%})%*%{$reset_color%}"
+    echo "%(?.%{$fg_bold[blue]%}.%{$fg_bold[red]%})%*%{$reset_color%}"
 }
 
 export PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) ${parse_git_branch}$(prompt_char)%{$reset_color%} '
