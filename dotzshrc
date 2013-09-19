@@ -3,8 +3,6 @@
 # by Kevin "qwazerty" Houdebert #
 #################################
 
-export TERM=rxvt
-
 # Load all files in ~/.zsh/
 for file in ~/.zsh/*.zsh; do
     source $file
