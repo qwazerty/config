@@ -6,10 +6,10 @@ noremap j gj
 noremap k gk
 
 " Map C-Arrow key on resize split
-map <UP> <C-W>-
-map <DOWN> <C-W>+
-map <LEFT> <C-W><
-map <RIGHT> <C-W>>
+"map <UP> <C-W>-
+"map <DOWN> <C-W>+
+"map <LEFT> <C-W><
+"map <RIGHT> <C-W>>
 
 " Map split buffer start cmd on space
 map <SPACE> <C-W><C-W>
