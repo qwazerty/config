@@ -9,6 +9,7 @@ set nocompatible
 
 " Disable indent if Makefile
 autocmd FileType make set noexpandtab
+autocmd FileType make set softtabstop=8
 
 " Force command show
 set showcmd
