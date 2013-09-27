@@ -29,7 +29,7 @@ function precmd {
 }
 
 function timer_show {
-    if [ ${TIMER_SHOW} -ne 0 ]; then
+    if [ "${TIMER_SHOW}" -ne 0 ]; then
         echo "%{$fg_bold[cyan]%}${TIMER_SHOW}s "
     fi
 }
