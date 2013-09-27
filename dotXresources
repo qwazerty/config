@@ -31,11 +31,11 @@ URxvt*foreground:           white
 *color1:  #ff2525
 *color9:  #ff0d0d
 ! DarkGreen + Green
-*color2:  #a3e45f
-*color10: #d8f7b8
+*color2:  #63d43f
+*color10: #98f768
 ! DarkYellow + Yellow
-*color3:  #fac94d
-*color11: #ffd133
+*color3:  #e5b900
+*color11: #d5a900
 ! DarkBlue + Blue
 *color4:  #305adf
 *color12: #4475ff
