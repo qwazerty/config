@@ -17,25 +17,22 @@ function clock {
 }
 
 function preexec {
-    typeset -gi CALCTIME=1
-    typeset -gi CMDSTARTTIME=SECONDS
+    CALCTIME=1
+    CMDSTARTTIME=$SECONDS
 }
 
 function precmd {
     if (( CALCTIME )); then
-        typeset -gi TIMER_SHOW=SECONDS-CMDSTARTTIME
+        TIMER_SHOW=$(($SECONDS-$CMDSTARTTIME))
     fi
-    typeset -gi CALCTIME=0
+    CALCTIME=0
 }
 
 function timer_show {
     timer=$TIMER_SHOW
     if [ "$timer" -ne 0 ]; then
-        if [ "$timer" -ge 60 ]; then
-            tmp=$timer
-            timer=$(($tmp / 60)):$(($tmp % 60))
-            unset tmp
-        fi
+        tmp=$timer
+        timer=$(($tmp / 60)):$(printf "%02d" $(($tmp % 60)))
         echo "%{$fg[red]%}(%{$fg[cyan]%}$timer%{$fg[red]%}) "
     fi
 }
