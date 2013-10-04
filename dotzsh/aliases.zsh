@@ -2,14 +2,18 @@
 
 # Common aliases
 alias us='setxkbmap us'
+alias us_intl='setxkbmap us_intl'
 alias fr='setxkbmap fr'
 alias ls='ls --color'
 alias l='ls --color'
 alias la='ls -la --color'
 alias ll='ls -l --color'
+alias cdo='cd $_'
+alias cdb='cd -'
 alias e='vim'
 alias c=' google-chrome || chromium-browser'
 alias j='jobs'
+alias psgrep='ps aux | grep -v grep | grep'
 
 # ChmoXXX
 alias chmox='chmod +x'
