@@ -11,6 +11,9 @@ set nocompatible
 autocmd FileType make set noexpandtab
 autocmd FileType make set softtabstop=8
 
+" Start NERDTree if no option given
+autocmd vimenter * if !argc() | NERDTree | endif
+
 " Force command show
 set showcmd
 
