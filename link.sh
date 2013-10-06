@@ -11,6 +11,7 @@ rm -f ~/.vimrc
 rm -f ~/.vimpagerrc
 rm -f ~/.Xresources
 rm -f ~/.xinitrc
+rm -f ~/.zcompdump
 
 cp -r dotzsh ~/.zsh
 cp -r dotconfig/i3status ~/.config/i3status
