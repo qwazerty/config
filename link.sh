@@ -23,5 +23,3 @@ cp -r dotvimrc ~/.vimrc
 cp -r dotvimpagerrc ~/.vimpagerrc
 cp -r dotXresources ~/.Xresources
 cp -r dotxinitrc ~/.xinitrc
-
-source ~/.zshrc
