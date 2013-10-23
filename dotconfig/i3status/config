@@ -7,12 +7,12 @@ general {
 order += "disk /"
 order += "ipv6"
 order += "run_watch DHCP"
-order += "wireless wlp3s0"
+order += "wireless wlan0"
 order += "ethernet eth0"
 order += "load"
 #order += "cpu_temperature 0"
-#order += "volume master"
-#order += "battery 0"
+order += "volume master"
+order += "battery 0"
 order += "time"
 
 volume master {
@@ -22,7 +22,7 @@ volume master {
     mixer_idx = 0
 }
 
-wireless wlp3s0 {
+wireless wlan0 {
     format_up = "W: (%quality at %essid) %ip"
     format_down = "W"
 }
