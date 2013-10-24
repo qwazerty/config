@@ -68,3 +68,5 @@ alias ptt='ping -c 3 www.acu.epita.fr'
 # Custom aliases
 alias am='alsamixer'
 alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
+alias red='redshift -l 48.8566:2.3522'
+alias ..='source ~/.zshrc'
