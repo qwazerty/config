@@ -19,7 +19,5 @@ export LANG="$LC_ALL"
 # Set TERMINAL for i3-sensible-terminal
 export TERMINAL=urxvt
 
-export TERM=rxvt
-
 # Set NNTP Server for epita newsgroups (slrn)
 export NNTPSERVER=news.epita.fr
