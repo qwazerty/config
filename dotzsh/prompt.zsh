@@ -37,5 +37,5 @@ function timer_show {
     fi
 }
 
-export PROMPT='%(!.%{$fg[red]%}.%{$fg[yellow]%}%n%{$fg[red]%}@)%m %{$fg[blue]%}%~ ${parse_git_branch}$(prompt_char)%{$reset_color%} '
+export PROMPT='%(!.%{$fg[red]%}.%{$fg[yellow]%}%n%{$fg[red]%}@)%m %{$fg[blue]%}%~ $(prompt_char)%{$reset_color%} '
 export RPROMPT='$(timer_show)$(parse_git_branch)$(clock)'
