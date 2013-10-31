@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/sh
 
 mkdir -p ~/.config
 rm -rf ~/.zsh
