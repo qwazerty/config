@@ -7,7 +7,7 @@
 !URxvt*boldfont:             -*-Terminus-medium-*-*-*-*-140-*-*-*-*-iso8859-1
 
 ! - Scroll Bar
-*saveLines:            100000
+!*saveLines:            100000
 *scrollBar:            false
 
 ! ==============
@@ -21,7 +21,7 @@ URxvt*background:           black
 URxvt*foreground:           white
 
 ! - Cursor color
-*cursorColor:          #DCDCCC
+*cursorColor:          #CCACCC
 
 ! - 8/16 Colors
 ! Black (not tango) + DarkGrey
