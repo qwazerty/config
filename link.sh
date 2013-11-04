@@ -9,7 +9,7 @@ rm -rf ~/.project_gen
 rm -f ~/.zshrc
 rm -f ~/.vimrc
 rm -f ~/.vimpagerrc
-rm -f ~/.Xdefaults
+rm -f ~/.Xresources
 rm -f ~/.xinitrc
 rm -f ~/.zcompdump
 
@@ -21,5 +21,5 @@ cp -r dotproject_gen ~/.project_gen
 cp -r dotzshrc ~/.zshrc
 cp -r dotvimrc ~/.vimrc
 cp -r dotvimpagerrc ~/.vimpagerrc
-cp -r dotXdefaults ~/.Xdefaults
+cp -r dotXresources ~/.Xresources
 cp -r dotxinitrc ~/.xinitrc
