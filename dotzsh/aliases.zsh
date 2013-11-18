@@ -14,6 +14,7 @@ alias e='vim'
 alias c=' google-chrome || chromium-browser'
 alias j='jobs'
 alias psgrep='ps aux | grep -v grep | grep'
+alias wm_name='xprop | grep WM_NAME'
 
 # ChmoXXX
 alias chmox='chmod +x'
