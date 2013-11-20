@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # History file path
-HISTFILE=~/.histfile
+HISTFILE=~/.zsh_history
 
 # Zsh session history size
 HISTSIZE=1000
