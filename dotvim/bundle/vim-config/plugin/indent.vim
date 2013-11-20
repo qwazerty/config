@@ -12,4 +12,3 @@ set softtabstop=4
 
 " Add autoindent
 set autoindent
-set cindent
