@@ -16,7 +16,7 @@ unsetopt nomatch
 unsetopt extendedglob
 
 set_title() {
-    echo -en "\e]0;$1\a"
+    echo -en "\e]0;$1\a\a"
 }
 
 set_title_precmd() {
