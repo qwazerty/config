@@ -1,3 +1,4 @@
 setxkbmap us
 xset r rate 200 80
+[ -e ~/.myxinitrc ] && . ~/.myxinitrc
 exec i3
