@@ -8,20 +8,21 @@
 
 ! - Scroll Bar
 !*saveLines:            100000
-*scrollBar:            false
+*scrollBar:             false
+URxvt*urgentOnBell:     true
 
 ! ==============
 !     Colors
 ! ==============
 
 ! -- Background color
-URxvt*background:           black
+URxvt*background:       black
 
 ! -- Foreground color
-URxvt*foreground:           white
+URxvt*foreground:       white
 
 ! - Cursor color
-*cursorColor:          #CCACCC
+*cursorColor:           #CCACCC
 
 ! - 8/16 Colors
 ! Black (not tango) + DarkGrey
