@@ -1,0 +1,14 @@
+[user]
+	name = Kevin \"qwazerty\" Houdebert
+	email = precursor.qwaz@hotmail.fr
+
+[alias]
+        s = status
+        l = log
+        a = add -v
+        c = commit
+        cm = commit -m
+        cam = commit -am
+        ck = checkout
+        list = diff --cached --name-only
+        sh = ls-tree --name-only -r HEAD
