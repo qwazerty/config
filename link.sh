@@ -1,5 +1,7 @@
 #!/bin/sh
 
+PWD=`pwd`
+
 mkdir -p ~/.config
 rm -rf ~/.zsh
 rm -rf ~/.config/i3status
@@ -13,13 +15,13 @@ rm -f ~/.Xresources
 rm -f ~/.xinitrc
 rm -f ~/.zcompdump
 
-cp -r dotzsh ~/.zsh
-cp -r dotconfig/i3status ~/.config/i3status
-cp -r doti3 ~/.i3
-cp -r dotvim ~/.vim
-cp -r dotproject_gen ~/.project_gen
-cp -r dotzshrc ~/.zshrc
-cp -r dotvimrc ~/.vimrc
-cp -r dotvimpagerrc ~/.vimpagerrc
-cp -r dotXresources ~/.Xresources
-cp -r dotxinitrc ~/.xinitrc
+ln -s $PWD/dotzsh ~/.zsh
+ln -s $PWD/dotconfig/i3status ~/.config/i3status
+ln -s $PWD/doti3 ~/.i3
+ln -s $PWD/dotvim ~/.vim
+ln -s $PWD/dotproject_gen ~/.project_gen
+ln -s $PWD/dotzshrc ~/.zshrc
+ln -s $PWD/dotvimrc ~/.vimrc
+ln -s $PWD/dotvimpagerrc ~/.vimpagerrc
+ln -s $PWD/dotXresources ~/.Xresources
+ln -s $PWD/dotxinitrc ~/.xinitrc
