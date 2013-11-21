@@ -4,6 +4,7 @@
 alias us='setxkbmap us'
 alias us_intl='setxkbmap us_intl'
 alias fr='setxkbmap fr'
+alias dv='setxkbmap us dvorak'
 alias ls='ls --color'
 alias l='ls --color'
 alias la='ls -la --color'
@@ -11,12 +12,11 @@ alias ll='ls -l --color'
 alias cdo='cd $_'
 alias cdb='cd -'
 alias e='vim'
-alias c=' google-chrome || chromium-browser'
+alias u='ls'
+alias o='cd'
 alias j='jobs'
 alias psgrep='ps aux | grep -v grep | grep'
 alias wm_name='xprop | grep WM_NAME'
-
-# ChmoXXX
 alias chmox='chmod +x'
 
 # Makefile aliases
@@ -32,13 +32,7 @@ alias emacs='emacs -nw'
 alias ne='emacs'
 
 # Git related aliases
-alias gadd='git add -v'
-alias gcommit='git commit -am '
-alias gpull='git pull -v origin master'
-alias gpush='gpull && git push -v origin master'
-alias glist='git diff --cached --name-only'
-alias gstat='git status'
-alias gshow='git ls-tree --name-only -r HEAD'
+alias g='git'
 
 # EPITA related aliases
 alias z='i3lock -c 424242'
