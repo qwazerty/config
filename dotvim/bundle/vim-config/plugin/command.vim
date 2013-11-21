@@ -16,3 +16,6 @@ command ArrowSet execute "call ArrowSet()"
 " Bind generate headers
 command Header execute "call Headers()"
 command Class execute "call Class()"
+
+" Write the file with sudo
+command W execute ':silent w !sudo tee % > /dev/null' | :edit
