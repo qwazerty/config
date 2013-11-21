@@ -37,8 +37,16 @@ function timer_show {
     fi
 }
 
+function prompt_ssh {
+    if [ -n "$SSH_CONNECTION" ]; then
+        echo "%{$fg[magenta]%}"
+    else
+        echo "%{$fg[red]%}"
+    fi
+}
+
 add-zsh-hook precmd prompt_precmd
 add-zsh-hook preexec prompt_preexec
 
-export PROMPT='%(!.%{$fg[red]%}.%{$fg[yellow]%}%n%{$fg[red]%}@)%m %{$fg[blue]%}%~ $(prompt_char)%{$reset_color%} '
+export PROMPT='%(!.$(prompt_ssh).%{$fg[yellow]%}%n$(prompt_ssh)@)%m %{$fg[blue]%}%~ $(prompt_char)%{$reset_color%} '
 export RPROMPT='$(timer_show)$(parse_git_branch)$(clock)'

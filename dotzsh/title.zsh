@@ -2,7 +2,9 @@
 # Jobs display thanks to Chmool
 
 set_title() {
-    print -Pn "\e]0;[%~] $1\a\a"
+    unset TITLE_SSH
+    [ -n "$SSH_CONNECTION" ] && TITLE_SSH="[ssh] "
+    print -Pn "\e]0;${TITLE_SSH}[%~] $1\a\a"
 }
 
 set_title_precmd() {
