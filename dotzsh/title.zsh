@@ -2,11 +2,8 @@
 # Jobs display thanks to Chmool
 
 set_title() {
-    unset TITLE_SSH
-    unset JOBS
-    [ `jobs %% | wc -l` -gt 0 ] && JOBS="(%j) "
-    [ -n "$SSH_CONNECTION" ] && TITLE_SSH="[ssh] "
-    print -Pn "\e]0;${TITLE_SSH}${JOBS}[%~] $1\a\a"
+    [ -n "$SSH_CONNECTION" ]
+    print -Pn "\e]0;%(?:[ssh] :)%1(j:(%j) :)[%~] $1\a\a"
 }
 
 set_title_precmd() {
@@ -14,12 +11,12 @@ set_title_precmd() {
 }
 
 set_title_preexec() {
-    CMD=`echo $1 | tr -s " "`
+    CMD=$1
     case "$CMD" in
-        ("fg" | "fg ")
+        "fg {0,}")
             CMD=`jobs %% | tr -s ' ' | cut -d' ' -f1,4-`
             ;;
-        ("fg %"*)
+        "fg %"*)
             CMD=`jobs ${1/fg /} | tr -s ' ' | cut -d' ' -f1,4-`
             ;;
     esac
