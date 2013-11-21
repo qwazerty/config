@@ -10,7 +10,7 @@ set_title() {
 set_title_precmd() {
     unset JOBS
     [ `print -Pn %j` -gt 0 ] && JOBS="(%j) "
-    set_title $JOBS$0
+    set_title "${JOBS}%n@%m"
 }
 
 set_title_preexec() {
