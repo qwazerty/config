@@ -148,11 +148,13 @@ bindsym $mod+m exec /home/qwazerty/.i3/keymap.sh
 #bindsym XF86AudioPrev exec ~/.i3/touchpad.sh
 
 bindsym XF86AudioMute exec echo mute | telnet qbeat 4242
-bindsym XF86AudioLowerVolume exec ~/.i3/masterlower.sh
-bindsym XF86AudioRaiseVolume exec ~/.i3/masterraise.sh
-
-bindsym XF86AudioPlay exec ~/.i3/zlock.sh
-bindsym XF86AudioPrev exec ~/.i3/touchpad.sh
+bindsym XF86AudioLowerVolume exec echo volume -1 | telnet qbeat 4242
+bindsym XF86AudioRaiseVolume exec echo volume +1 | telnet qbeat 4242
+bindsym XF86AudioPlay exec echo pause | telnet qbeat 4242
+bindsym XF86Tools exec echo NEXT | telnet qbeat 4242
+bindsym XF86HomePage exec echo I3_TOGGLE | telnet qbeat 4242
+bindsym XF86Mail exec echo TOGGLE | telnet qbeat 4242
+bindsym XF86Reload exec echo FULLSCREEN | telnet qbeat 4242
 
 # Custom disable focus mouse
 focus_follows_mouse no
