@@ -2,7 +2,7 @@
 # Jobs display thanks to Chmool
 
 set_title() {
-    print -Pn "\e]0;[%~] $1\a"
+    print -Pn "\e]0;[%~] $1\a\a"
 }
 
 set_title_precmd() {
