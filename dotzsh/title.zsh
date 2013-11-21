@@ -14,7 +14,16 @@ set_title_precmd() {
 }
 
 set_title_preexec() {
-    set_title $1
+    CMD=`echo $1 | tr -s " "`
+    case "$CMD" in
+        ("fg" | "fg ")
+            CMD=`jobs %% | tr -s ' ' | cut -d' ' -f1,4-`
+            ;;
+        ("fg %"*)
+            CMD=`jobs ${1/fg /} | tr -s ' ' | cut -d' ' -f1,4-`
+            ;;
+    esac
+    set_title $CMD
 }
 
 add-zsh-hook precmd set_title_precmd
