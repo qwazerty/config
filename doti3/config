@@ -131,7 +131,15 @@ for_window [class="qemu-system-i386"] floating enable
 # Custom bind
 bindsym $mod+m exec /home/qwazerty/.i3/keymap.sh
 
-bindsym XF86AudioMute exec ~/.i3/amute.sh
+# FIXME: To clean (when I'm not lazy)
+#bindsym XF86AudioMute exec ~/.i3/amute.sh
+#bindsym XF86AudioLowerVolume exec ~/.i3/masterlower.sh
+#bindsym XF86AudioRaiseVolume exec ~/.i3/masterraise.sh
+#
+#bindsym XF86AudioPlay exec ~/.i3/zlock.sh
+#bindsym XF86AudioPrev exec ~/.i3/touchpad.sh
+
+bindsym XF86AudioMute exec echo mute | telnet qbeat 4242
 bindsym XF86AudioLowerVolume exec ~/.i3/masterlower.sh
 bindsym XF86AudioRaiseVolume exec ~/.i3/masterraise.sh
 
