@@ -1,5 +1,3 @@
-#!/bin/sh
-
 # Set the editor to vim
 export EDITOR='vim'
 
@@ -21,3 +19,12 @@ export TERMINAL=urxvt
 
 # Set NNTP Server for epita newsgroups (slrn)
 export NNTPSERVER=news.epita.fr
+
+# History file path
+export HISTFILE=~/.histfile
+
+# Zsh session history size
+export HISTSIZE=1000
+
+# History file size
+export SAVEHIST=1000
