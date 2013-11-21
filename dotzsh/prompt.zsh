@@ -16,12 +16,12 @@ function clock {
     echo "%(?.%{$fg[blue]%}.%{$fg[red]%})%*%{$reset_color%}"
 }
 
-function preexec {
+function prompt_preexec {
     CALCTIME=1
     CMDSTARTTIME=$SECONDS
 }
 
-function precmd {
+function prompt_precmd {
     if (( CALCTIME )); then
         TIMER_SHOW=$(($SECONDS-$CMDSTARTTIME))
     fi
@@ -36,6 +36,9 @@ function timer_show {
         echo "%{$fg[red]%}(%{$fg[cyan]%}$timer%{$fg[red]%}) "
     fi
 }
+
+add-zsh-hook precmd prompt_precmd
+add-zsh-hook preexec prompt_preexec
 
 export PROMPT='%(!.%{$fg[red]%}.%{$fg[yellow]%}%n%{$fg[red]%}@)%m %{$fg[blue]%}%~ $(prompt_char)%{$reset_color%} '
 export RPROMPT='$(timer_show)$(parse_git_branch)$(clock)'
