@@ -60,6 +60,11 @@ alias ssha='eval $(ssh-agent) && ssh-add'
 alias pt='ping -c 3 www.google.com'
 alias ptt='ping -c 3 www.acu.epita.fr'
 
+# Docker aliases
+ds() { [ -n "$1" ] && docker commit `docker ps -a -l -q` $1 }
+dr() { [ -n "$1" ] && docker run -n=true -i -t $1 ${2:-zsh} }
+drs() { dr $1 $2; echo -n "Commit container $1? "; read; ds $1 }
+
 # Custom aliases
 alias am='alsamixer'
 alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
