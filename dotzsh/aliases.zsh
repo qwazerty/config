@@ -16,7 +16,7 @@ alias u='ls'
 alias o='cd'
 alias j='jobs'
 alias psgrep='ps aux | grep -v grep | grep'
-alias wm_name='xprop | grep WM_NAME'
+alias wm_name='xprop | grep WM_CLASS'
 alias chmox='chmod +x'
 
 # Makefile aliases
