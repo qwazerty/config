@@ -125,16 +125,16 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Custom assign workspace
-assign [class="DClock"] 10
-assign [class="Xm"] 10
-assign [class="jetbrains-idea-ce"] 1
-assign [class="Fceux"] 10
+assign [class="(?i)jetbrains-idea-ce"] 1
+assign [class="(?i)dclock"] 10
+assign [class="(?i)xm"] 10
+assign [class="(?i)fceux"] 10
 
 # Custom floating windows
-for_window [class="Zlock"] floating enable
-for_window [class="track"] floating enable
-for_window [class="com-intellij-rt-execution-application-AppMain"] floating enable
-for_window [class="qemu-system-i386"] floating enable
+for_window [class="(?i)zlock"] floating enable
+for_window [class="(?i)track"] floating enable
+for_window [class="(?i)com-intellij-rt-execution-application-AppMain"] floating enable
+for_window [class="(?i)qemu-system-i386"] floating enable
 
 # Custom bind
 bindsym $mod+m exec /home/qwazerty/.i3/keymap.sh
@@ -156,6 +156,11 @@ bindsym XF86HomePage exec echo I3_TOGGLE | telnet qbeat 4242
 bindsym XF86Mail exec echo TOGGLE | telnet qbeat 4242
 bindsym XF86Reload exec echo FULLSCREEN | telnet qbeat 4242
 
+client.focused          #35247b     #55349b     #ffffff
+client.focused_inactive #232323     #342356     #ffffff
+client.unfocused        #1a1a1a     #222222     #ffffff
+client.urgent           #b11961     #c12971     #ffffff
+
 # Custom disable focus mouse
 focus_follows_mouse no
 
@@ -166,5 +171,4 @@ bindsym $mod+z exec i3lock -c 333333
 # finds out, if available)
 bar {
     status_command i3status
-    #status_command ~/.i3/wrapper-i3status.bash
 }
