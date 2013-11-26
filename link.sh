@@ -16,14 +16,14 @@ rm -f ~/.xinitrc
 rm -f ~/.zcompdump
 rm -f ~/.gitconfig
 
-ln -s $PWD/dotzsh ~/.zsh
-ln -s $PWD/dotconfig/i3status ~/.config/i3status
-ln -s $PWD/doti3 ~/.i3
-ln -s $PWD/dotvim ~/.vim
-ln -s $PWD/dotproject_gen ~/.project_gen
-ln -s $PWD/dotzshrc ~/.zshrc
-ln -s $PWD/dotvimrc ~/.vimrc
-ln -s $PWD/dotvimpagerrc ~/.vimpagerrc
-ln -s $PWD/dotXresources ~/.Xresources
-ln -s $PWD/dotxinitrc ~/.xinitrc
-ln -s $PWD/dotgitconfig ~/.gitconfig
+ln -s $PWD/zsh ~/.zsh
+ln -s $PWD/config/i3status ~/.config/i3status
+ln -s $PWD/i3 ~/.i3
+ln -s $PWD/vim ~/.vim
+ln -s $PWD/project_gen ~/.project_gen
+ln -s $PWD/zshrc ~/.zshrc
+ln -s $PWD/vimrc ~/.vimrc
+ln -s $PWD/vimpagerrc ~/.vimpagerrc
+ln -s $PWD/Xresources ~/.Xresources
+ln -s $PWD/xinitrc ~/.xinitrc
+ln -s $PWD/gitconfig ~/.gitconfig

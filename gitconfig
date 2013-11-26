@@ -13,3 +13,5 @@
         d = diff
         list = diff --cached --name-only
         sh = ls-tree --name-only -r HEAD
+[push]
+	default = simple
