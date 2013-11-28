@@ -124,6 +124,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
+# Disable focus mouse
+focus_follows_mouse no
+
 # Custom assign workspace
 assign [class="(?i)jetbrains-idea-ce"] 1
 assign [class="(?i)dclock"] 10
@@ -137,16 +140,6 @@ for_window [class="(?i)com-intellij-rt-execution-application-AppMain"] floating 
 for_window [class="(?i)qemu-system-i386"] floating enable
 
 # Custom bind
-bindsym $mod+m exec /home/qwazerty/.i3/keymap.sh
-
-# FIXME: To clean (when I'm not lazy)
-#bindsym XF86AudioMute exec ~/.i3/amute.sh
-#bindsym XF86AudioLowerVolume exec ~/.i3/masterlower.sh
-#bindsym XF86AudioRaiseVolume exec ~/.i3/masterraise.sh
-#
-#bindsym XF86AudioPlay exec ~/.i3/zlock.sh
-#bindsym XF86AudioPrev exec ~/.i3/touchpad.sh
-
 bindsym XF86AudioMute exec echo mute | telnet qbeat 4242
 bindsym XF86AudioLowerVolume exec echo volume -1 | telnet qbeat 4242
 bindsym XF86AudioRaiseVolume exec echo volume +1 | telnet qbeat 4242
@@ -156,16 +149,14 @@ bindsym XF86HomePage exec echo I3_TOGGLE | telnet qbeat 4242
 bindsym XF86Mail exec echo TOGGLE | telnet qbeat 4242
 bindsym XF86Reload exec echo FULLSCREEN | telnet qbeat 4242
 
+# Bind for i3lock
+bindsym $mod+z exec i3lock -c 424242
+
+# Custom color classes
 client.focused          #35247b     #55349b     #ffffff
 client.focused_inactive #232323     #342356     #ffffff
 client.unfocused        #1a1a1a     #222222     #ffffff
 client.urgent           #b11961     #c12971     #ffffff
-
-# Custom disable focus mouse
-focus_follows_mouse no
-
-# Bind for i3lock
-bindsym $mod+z exec i3lock -c 333333
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
