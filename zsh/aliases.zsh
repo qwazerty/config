@@ -1,23 +1,37 @@
 #!/bin/sh
 
 # Common aliases
-alias us='setxkbmap us'
-alias us_intl='setxkbmap us_intl'
-alias fr='setxkbmap fr'
-alias dv='setxkbmap us dvorak'
 alias ls='ls --color'
 alias l='ls --color'
 alias la='ls -la --color'
 alias ll='ls -l --color'
+
 alias cdo='cd $_'
 alias cdb='cd -'
+
 alias e='vim'
 alias u='ls'
 alias o='cd'
 alias j='jobs'
+
 alias psgrep='ps aux | grep -v grep | grep'
 alias wm_name='xprop | grep WM_CLASS'
 alias chmox='chmod +x'
+alias tmux='tmux -2'
+
+alias g='git'
+alias z='i3lock -c 424242'
+
+alias am='alsamixer'
+alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
+alias red='redshift -l 48.8566:2.3522'
+alias ..='source ~/.zshrc'
+
+# Setxkbmap aliases
+alias us='setxkbmap us'
+alias us_intl='setxkbmap us_intl'
+alias fr='setxkbmap fr'
+alias dv='setxkbmap us dvorak'
 
 # Makefile aliases
 alias m='make'
@@ -27,16 +41,9 @@ alias bcm='make distclean; ./bootstrap && ./configure && make'
 alias bcdm='make distclean; ./bootstrap && ./configure -with-debug && make'
 alias mclm='make clean && make'
 
-# Haha like I would use emacs
+# Haha.
 alias emacs='emacs -nw'
 alias ne='emacs'
-
-# Git related aliases
-alias g='git'
-
-# EPITA related aliases
-alias z='i3lock -c 424242'
-alias gen='~/.project_gen/gen.sh'
 
 # Programming aliases
 alias valgrind='valgrind -v --leak-check=full --show-reachable=yes \
@@ -64,9 +71,3 @@ alias ptt='ping -c 3 www.acu.epita.fr'
 ds() { [ -n "$1" ] && docker commit `docker ps -a -l -q` $1 }
 dr() { [ -n "$1" ] && docker run -n=true -i -t $1 ${2:-zsh} }
 drs() { dr $1 $2; echo -n "Commit container $1? "; read; ds $1 }
-
-# Custom aliases
-alias am='alsamixer'
-alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
-alias red='redshift -l 48.8566:2.3522'
-alias ..='source ~/.zshrc'

@@ -5,7 +5,7 @@ PWD=`pwd`
 rm -rf ~/.zsh
 rm -rf ~/.i3
 rm -rf ~/.vim
-rm -rf ~/.irssi
+rm -rf ~/.weechat
 rm -f ~/.zshrc
 rm -f ~/.vimrc
 rm -f ~/.vimpagerrc
@@ -18,7 +18,7 @@ rm -f ~/.tmux.conf
 ln -s $PWD/zsh ~/.zsh
 ln -s $PWD/i3 ~/.i3
 ln -s $PWD/vim ~/.vim
-ln -s $PWD/irssi ~/.irssi
+ln -s $PWD/weechat ~/.weechat
 ln -s $PWD/zshrc ~/.zshrc
 ln -s $PWD/vimrc ~/.vimrc
 ln -s $PWD/vimpagerrc ~/.vimpagerrc
