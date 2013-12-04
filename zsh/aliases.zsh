@@ -15,6 +15,7 @@ alias o='cd'
 alias j='jobs'
 
 alias psgrep='ps aux | grep -v grep | grep'
+pskill() { kill -9 `ps aux | grep -v grep | grep $1 | awk '{ print $2 }'` }
 alias wm_name='xprop | grep WM_CLASS'
 alias chmox='chmod +x'
 alias tmux='tmux -2'
