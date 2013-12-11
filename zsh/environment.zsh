@@ -17,8 +17,8 @@ export LANG="$LC_ALL"
 # Set TERMINAL for i3-sensible-terminal
 export TERMINAL=urxvt
 
-if [ -n "$SSH_CONNECTION" ]; then
-    export TERM=rxvt-unicode
+if [ -n "$TMUX" ]; then
+    export TERM=screen-256color
 fi
 
 # Set NNTP Server for epita newsgroups (slrn)
