@@ -28,3 +28,8 @@ set mail_check = 120
 
 set autoedit			# go to the editor right away when composing
 set edit_headers		# let me edit the message header when composing
+
+bind generic,index,pager q noop
+macro index,pager a "<save-message>=[Gmail]/All Mail<enter><enter>" "Archive"
+macro index,pager d "<save-message>=[Gmail]/Trash<enter><enter>" "Trash"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
