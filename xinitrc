@@ -7,4 +7,4 @@ setterm -blank 0 -powersave off -powerdown 0
 xset -dpms
 xset r rate 200 80
 xset s off
-#exec i3
+exec i3
