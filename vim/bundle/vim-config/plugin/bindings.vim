@@ -1,36 +1,30 @@
 " Remap : on ;
-nmap ; :
+nnoremap ; :
 
 " Allow to move in wrapped lines
-noremap j gj
-noremap k gk
+nnoremap j gj
+nnoremap k gk
 
-" Map C-Arrow key on resize split
-"map <UP> <C-W>-
-"map <DOWN> <C-W>+
-"map <LEFT> <C-W><
-"map <RIGHT> <C-W>>
+" Yank line until end of line like D
+nnoremap Y y$
 
 " Map split buffer start cmd on space
-map <SPACE> <C-W><C-W>
-
-" Unmap help
-imap <F1> <Nop>
+noremap <SPACE> <C-W><C-W>
 
 " Map set number command
-map <F1> :set number<CR>
+noremap <F1> :set norelativenumber<CR>:set number<CR>
 
 " Map set relativenumber command
-map <F2> :set relativenumber<CR>
+noremap <F2> :set nonumber<CR>:set relativenumber<CR>
 
 " Map set nonumber command
-map <F3> :set nonumber<CR>
+noremap <F3> :set nonumber<CR>:set norelativenumber<CR>
 
 " Map next buffer
-map <C-H> :bp<CR>
+noremap <C-H> :bp<CR>
 
 " Map next buffer
-map <C-L> :bn<CR>
+noremap <C-L> :bn<CR>
 
-" Delete current buffer
-map <C-J> :bd<CR>
+" Disable this f*cking binding
+noremap Q <Nop>
