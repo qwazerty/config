@@ -14,3 +14,6 @@ unsetopt nomatch
 
 # Disable extented globing
 unsetopt extendedglob
+
+# Ignore duplicate in history
+setopt histignoredups
