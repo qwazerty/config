@@ -14,6 +14,7 @@ rm -f ~/.xinitrc
 rm -f ~/.zcompdump
 rm -f ~/.gitconfig
 rm -f ~/.tmux.conf
+rm -f ~/.muttrc
 
 ln -s $PWD/zsh ~/.zsh
 ln -s $PWD/i3 ~/.i3
@@ -26,3 +27,4 @@ ln -s $PWD/Xresources ~/.Xresources
 ln -s $PWD/xinitrc ~/.xinitrc
 ln -s $PWD/gitconfig ~/.gitconfig
 ln -s $PWD/tmux.conf ~/.tmux.conf
+ln -s $PWD/muttrc ~/.muttrc
