@@ -23,5 +23,7 @@ set_title_preexec() {
     set_title $CMD
 }
 
-add-zsh-hook precmd set_title_precmd
-add-zsh-hook preexec set_title_preexec
+if [ "$TERM" != "linux" ]; then
+    add-zsh-hook precmd set_title_precmd
+    add-zsh-hook preexec set_title_preexec
+fi
