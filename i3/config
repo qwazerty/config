@@ -148,6 +148,7 @@ bindsym XF86Tools exec echo NEXT | telnet qbeat 4242
 bindsym XF86HomePage exec echo I3_TOGGLE | telnet qbeat 4242
 bindsym XF86Mail exec echo TOGGLE | telnet qbeat 4242
 bindsym XF86Reload exec echo FULLSCREEN | telnet qbeat 4242
+bindsym Print exec ~/.i3/touchpad.sh
 
 # Bind for i3lock
 bindsym $mod+z exec i3lock -c 424242
@@ -162,4 +163,5 @@ client.urgent           #b11961     #c12971     #ffffff
 # finds out, if available)
 bar {
     status_command i3status -c ~/.i3/i3status.conf
+    position top
 }
