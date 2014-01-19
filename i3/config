@@ -140,18 +140,20 @@ for_window [class="(?i)com-intellij-rt-execution-application-AppMain"] floating 
 for_window [class="(?i)qemu-system-i386"] floating enable
 
 # Custom bind
-bindsym XF86AudioMute exec echo mute | telnet qbeat 4242
-bindsym XF86AudioLowerVolume exec echo volume -1 | telnet qbeat 4242
-bindsym XF86AudioRaiseVolume exec echo volume +1 | telnet qbeat 4242
-bindsym XF86AudioPlay exec echo pause | telnet qbeat 4242
-bindsym XF86Tools exec echo NEXT | telnet qbeat 4242
-bindsym XF86HomePage exec echo I3_TOGGLE | telnet qbeat 4242
-bindsym XF86Mail exec echo TOGGLE | telnet qbeat 4242
-bindsym XF86Reload exec echo FULLSCREEN | telnet qbeat 4242
-bindsym Print exec ~/.i3/touchpad.sh
+bindsym XF86AudioMute exec ~/.i3/bindsym.sh XF86AudioMute
+bindsym XF86AudioLowerVolume exec ~/.i3/bindsym.sh XF86AudioLowerVolume
+bindsym XF86AudioRaiseVolume exec ~/.i3/bindsym.sh XF86AudioRaiseVolume
+bindsym XF86AudioPlay exec ~/.i3/bindsym.sh XF86AudioPlay
+bindsym XF86Tools exec ~/.i3/bindsym.sh XF86Tools
+bindsym XF86HomePage exec ~/.i3/bindsym.sh XF86HomePage
+bindsym XF86Mail exec ~/.i3/bindsym.sh XF86Mail
+bindsym XF86Reload exec ~/.i3/bindsym.sh XF86Reload
+bindsym XF86Launch6 exec ~/.i3/bindsym.sh XF86Launch6
+bindsym Print exec ~/.i3/bindsym.sh Print
 
 # Bind for i3lock
-bindsym $mod+z exec i3lock -c 424242
+bindsym $mod+z exec ~/.i3/bindsym.sh Zlock
+bindsym $mod+Shift+z exec ~/.i3/bindsym.sh Zsuspend
 
 # Custom color classes
 client.focused          #35247b     #55349b     #ffffff
