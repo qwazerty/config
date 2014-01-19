@@ -1,11 +1,10 @@
+#!/bin/bash
 # HGXonf
 # by Alexis 'Horgix' Chotard
 # https://bitbucket.org/Horgix/
 
 # keymap.sh for SCRIPTS
 # Change keymap by looping through a given set of keymap (us and fr here)
-
-#!/bin/bash
 
 keymaps=('us_intl' 'us')
 
