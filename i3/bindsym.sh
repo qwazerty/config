@@ -50,48 +50,12 @@ Zlock () {
 }
 
 Zsuspend () {
-    exit
+    Zlock
+    sudo pm-suspend
 }
 
 Print () {
-    exit
+    XF86Launch6
 }
 
-case "$1" in
-    XF86AudioMute)
-        XF86AudioMute
-        ;;
-    XF86AudioLowerVolume)
-        XF86AudioLowerVolume
-        ;;
-    XF86AudioRaiseVolume)
-        XF86AudioRaiseVolume
-        ;;
-    XF86AudioPlay)
-        XF86AudioPlay
-        ;;
-    XF86Tools)
-        XF86Tools
-        ;;
-    XF86HomePage)
-        XF86HomePage
-        ;;
-    XF86Mail)
-        XF86Mail
-        ;;
-    XF86Reload)
-        XF86Reload
-        ;;
-    XF86Launch6)
-        XF86Launch6
-        ;;
-    Zlock)
-        Zlock
-        ;;
-    Zsuspend)
-        Zsuspend
-        ;;
-    Print)
-        Print
-        ;;
-esac
+$1
