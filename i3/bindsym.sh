@@ -6,15 +6,15 @@ if [ -e ~/.mybindsym.sh ]; then
 fi
 
 XF86AudioMute() {
-    amixer -c 0 set Master mute
+    amixer set Master mute
 }
 
 XF86AudioLowerVolume() {
-    amixer -c 0 set Master 2- unmute
+    amixer set Master 5%- unmute
 }
 
 XF86AudioRaiseVolume() {
-    amixer -c 0 set Master 2+ unmute
+    amixer set Master 5%+ unmute
 }
 
 XF86AudioPlay() {
@@ -46,7 +46,7 @@ XF86Launch6() {
 }
 
 Zlock () {
-    i3lock -c 420042
+    i3lock -c 424242
 }
 
 Zsuspend () {
