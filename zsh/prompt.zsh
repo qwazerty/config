@@ -45,8 +45,14 @@ function prompt_ssh {
     fi
 }
 
+function prompt_ssh_agent {
+    if [ -e "/tmp/ssh_${USER}.agent" ]; then
+        echo "%{$fg[red]%}(%{$fg[cyan]%}ssh%{$fg[red]%}) %{$reset_color%}"
+    fi
+}
+
 add-zsh-hook precmd prompt_precmd
 add-zsh-hook preexec prompt_preexec
 
 export PROMPT='%(!.$(prompt_ssh).%{$fg[yellow]%}%n$(prompt_ssh)@)%m %{$fg[blue]%}%~ $(prompt_char)%{$reset_color%} '
-export RPROMPT='$(timer_show)$(parse_git_branch)$(clock)'
+export RPROMPT='$(timer_show)$(prompt_ssh_agent)$(parse_git_branch)$(clock)'

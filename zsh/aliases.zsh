@@ -64,7 +64,8 @@ alias gccf='gcc -std=c99 -pedantic -Wall \
 alias retag='ctags --tag-relative -Rf.git/tags'
 
 # Start ssh-agent
-alias ssha='eval $(ssh-agent) && ssh-add'
+alias ssha='ssh-agent | grep -v echo > /tmp/ssh_${USER}.agent && source /tmp/ssh_${USER}.agent && ssh-add'
+alias sshk='ssh-agent -k; rm /tmp/ssh_${USER}.agent'
 alias pt='ping -c 3 www.google.com'
 alias ptt='ping -c 3 www.acu.epita.fr'
 

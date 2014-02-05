@@ -32,3 +32,6 @@ export HISTSIZE=1000
 
 # History file size
 export SAVEHIST=1000
+
+# Source ssh-agent
+[ -e /tmp/ssh_${USER}.agent ] && . /tmp/ssh_${USER}.agent
