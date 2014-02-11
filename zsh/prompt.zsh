@@ -9,7 +9,7 @@ function prompt_char {
 
 function parse_git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo "%{$fg[red]%}(${ref#refs/heads/})%{$reset_color%} "
+    echo "%{$fg[red]%}(%{$fg[cyan]%}${ref#refs/heads/}%{$fg[red]%})%{$reset_color%} "
 }
 
 function clock {
