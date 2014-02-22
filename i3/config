@@ -137,7 +137,7 @@ assign [class="(?i)fceux"] 10
 for_window [class="(?i)zlock"] floating enable
 for_window [class="(?i)track"] floating enable
 for_window [class="(?i)com-intellij-rt-execution-application-AppMain"] floating enable
-for_window [class="(?i)qemu-system-i386"] floating enable
+#for_window [class="(?i)qemu-system-i386"] floating enable
 
 # Custom bind
 bindsym XF86AudioMute exec ~/.i3/bindsym.sh XF86AudioMute
