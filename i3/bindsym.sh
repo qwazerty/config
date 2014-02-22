@@ -51,7 +51,7 @@ Zlock () {
 
 Zsuspend () {
     Zlock
-    sudo pm-suspend
+    sudo pm-suspend-hybrid
 }
 
 Print () {
