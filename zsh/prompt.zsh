@@ -46,7 +46,7 @@ function prompt_ssh {
 }
 
 function prompt_ssh_agent {
-    if [ -e "/tmp/ssh_${USER}.agent" ]; then
+    if [ -e "/tmp/ssh_${USER}.agent" -a "$SSH_AGENT_PID" != "" ]; then
         echo "%{$fg[red]%}(%{$fg[cyan]%}ssh%{$fg[red]%}) %{$reset_color%}"
     fi
 }
