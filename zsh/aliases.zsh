@@ -1,10 +1,20 @@
 #!/bin/sh
 
 # Common aliases
-alias ls='ls --color'
-alias l='ls --color'
-alias la='ls -la --color'
-alias ll='ls -l --color'
+case $(uname -s) in
+    Linux)
+        alias ls='ls --color'
+        alias l='ls --color'
+        alias la='ls -la --color'
+        alias ll='ls -l --color'
+        ;;
+    FreeBSD)
+        alias ls='ls -G'
+        alias l='ls -G'
+        alias la='ls -la -G'
+        alias ll='ls -l -G'
+        ;;
+esac
 
 alias cdo='cd $_'
 alias cdb='cd -'
@@ -13,6 +23,8 @@ alias e='vim'
 alias u='ls'
 alias o='cd'
 alias j='jobs'
+alias mk='mkdir -p'
+alias tree='tree -AC'
 
 alias psgrep='ps aux | grep -v grep | grep'
 pskill() { kill -9 `ps aux | grep -v grep | grep $1 | awk '{ print $2 }'` }
