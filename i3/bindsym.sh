@@ -6,7 +6,7 @@ if [ -e ~/.mybindsym.sh ]; then
 fi
 
 XF86AudioMute() {
-    amixer set Master mute
+    amixer set Master 100%- unmute
 }
 
 XF86AudioLowerVolume() {
