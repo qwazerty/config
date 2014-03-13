@@ -4,15 +4,17 @@
 case $(uname -s) in
     Linux)
         alias ls='ls --color'
-        alias l='ls --color'
-        alias la='ls -la --color'
-        alias ll='ls -l --color'
+        alias l='ls'
+        alias la='ls -la'
+        alias ll='ls -l'
+        alias am='alsamixer'
         ;;
     FreeBSD)
         alias ls='ls -G'
-        alias l='ls -G'
-        alias la='ls -la -G'
-        alias ll='ls -l -G'
+        alias l='ls'
+        alias la='ls -la'
+        alias ll='ls -l'
+        alias am='rexima'
         ;;
 esac
 
@@ -35,14 +37,13 @@ alias tmux='tmux -2'
 alias g='git'
 alias z='i3lock -c 424242'
 
-alias am='alsamixer'
 alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
 alias red='redshift -l 48.8566:2.3522'
 alias ..='source ~/.zshrc'
 
 # Setxkbmap aliases
 alias us='setxkbmap us'
-alias us_intl='setxkbmap us_intl'
+alias usi='setxkbmap us_intl'
 alias fr='setxkbmap fr'
 alias dv='setxkbmap us dvorak'
 
