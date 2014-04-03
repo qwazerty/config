@@ -77,8 +77,8 @@ alias gccf='gcc -std=c99 -pedantic -Wall \
 alias retag='ctags --tag-relative -Rf.git/tags'
 
 # Start ssh-agent
-alias ssha='ssh-agent | grep -v echo > /tmp/ssh_${USER}.agent && source /tmp/ssh_${USER}.agent && ssh-add'
-alias sshk='ssh-agent -k; rm /tmp/ssh_${USER}.agent'
+alias ssha='ssh-agent | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent && source ~/.ssh/ssh_${HOST}_${USER}.agent && ssh-add'
+alias sshk='eval $(ssh-agent -k); rm ~/.ssh/ssh_${HOST}_${USER}.agent'
 
 # UNsafe SSH
 alias unssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'

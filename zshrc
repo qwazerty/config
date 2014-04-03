@@ -10,3 +10,5 @@ done
 
 # Load custom conf file
 [ -e ~/.myzshrc ] && . ~/.myzshrc
+
+true

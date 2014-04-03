@@ -34,4 +34,4 @@ export HISTSIZE=1000
 export SAVEHIST=1000
 
 # Source ssh-agent
-[ -e /tmp/ssh_${USER}.agent ] && . /tmp/ssh_${USER}.agent
+[ -e ~/.ssh/ssh_${HOST}_${USER}.agent ] && . ~/.ssh/ssh_${HOST}_${USER}.agent
