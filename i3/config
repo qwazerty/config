@@ -18,7 +18,7 @@ font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -156,7 +156,7 @@ bindsym $mod+z exec ~/.i3/bindsym.sh Zlock
 bindsym $mod+Shift+z exec ~/.i3/bindsym.sh Zsuspend
 
 # Custom color classes
-client.focused          #35247b     #55349b     #ffffff
+client.focused          #075390     #1773b0     #ffffff
 client.focused_inactive #232323     #342356     #ffffff
 client.unfocused        #1a1a1a     #222222     #ffffff
 client.urgent           #b11961     #c12971     #ffffff
