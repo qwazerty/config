@@ -46,7 +46,11 @@ XF86Launch6() {
 }
 
 Zlock () {
-    i3lock -c 424242
+    if which metalock >/dev/null 2>&1; then
+        metalock
+    elif which i3lock >/dev/null 2>&1; then
+        i3lock -i ~/stuff/random/background.png
+    fi
 }
 
 Zsuspend () {
