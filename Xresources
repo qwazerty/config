@@ -5,43 +5,43 @@
 ! - Scroll Bar
 !*saveLines:            100000
 *scrollBar:             false
-URxvt*urgentOnBell:     true
+*urgentOnBell:     true
 
 ! ==============
 !     Colors
 ! ==============
 
 ! -- Background color
-URxvt*background:       black
+*background:       black
 
 ! -- Foreground color
-URxvt*foreground:       #cccccc
+*foreground:       #cccccc
 
 ! - Cursor color
-URxvt*cursorColor:      #ccaccc
+*cursorColor:      #ccaccc
 
 ! - 8/16 Colors
 ! Black (not tango) + DarkGrey
-URxvt*color0:  #000000
-URxvt*color8:  #656763
+*color0:  #000000
+*color8:  #656763
 ! DarkRed + Red
-URxvt*color1:  #ff2525
-URxvt*color9:  #ff0d0d
+*color1:  #ff2525
+*color9:  #ff0d0d
 ! DarkGreen + Green
-URxvt*color2:  #63d43f
-URxvt*color10: #98f768
+*color2:  #63d43f
+*color10: #98f768
 ! DarkYellow + Yellow
-URxvt*color3:  #e5b900
-URxvt*color11: #d5a900
+*color3:  #e5b900
+*color11: #d5a900
 ! DarkBlue + Blue
-URxvt*color4:  #305adf
-URxvt*color12: #4475ff
+*color4:  #305adf
+*color12: #4475ff
 ! DarkMangenta + Mangenta
 URxvt*color5:  #de6c00
 URxvt*color13: #fa8900
 !DarkCyan + Cyan (both not tango)
-URxvt*color6:  #99c6f2
-URxvt*color14: #56b4ff
+*color6:  #99c6f2
+*color14: #56b4ff
 ! LightGrey + White
-URxvt*color7:  #dddddd
-URxvt*color15: #ffffff
+*color7:  #dddddd
+*color15: #ffffff
