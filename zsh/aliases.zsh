@@ -26,7 +26,7 @@ alias u='ls'
 alias o='cd'
 alias j='jobs'
 alias mk='mkdir -p'
-alias tree='tree -AC'
+alias tree='tree -C'
 
 alias psgrep='ps aux | grep -v grep | grep'
 pskill() { kill -9 `ps aux | grep -v grep | grep $1 | awk '{ print $2 }'` }
@@ -82,6 +82,7 @@ alias sshk='eval $(ssh-agent -k); rm ~/.ssh/ssh_${HOST}_${USER}.agent'
 
 # UNsafe SSH
 alias unssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+alias unscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Ping test
 alias pt='ping -c 3 www.google.com'
