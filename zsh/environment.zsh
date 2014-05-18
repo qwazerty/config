@@ -28,10 +28,10 @@ export NNTPSERVER=news.epita.fr
 export HISTFILE=~/.histfile
 
 # Zsh session history size
-export HISTSIZE=1000
+export HISTSIZE=10000
 
 # History file size
-export SAVEHIST=1000
+export SAVEHIST=10000
 
 # Source ssh-agent
 [ -e ~/.ssh/ssh_${HOST}_${USER}.agent ] && . ~/.ssh/ssh_${HOST}_${USER}.agent
