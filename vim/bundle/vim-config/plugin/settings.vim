@@ -17,6 +17,9 @@ au BufNewFile,BufRead *.tmpl set filetype=sh
 " Start NERDTree if no option given
 autocmd vimenter * if !argc() | NERDTree | endif
 
+" Keep history when switching between buffers
+set hidden
+
 " Force command show
 set showcmd
 
