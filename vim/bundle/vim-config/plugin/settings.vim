@@ -11,6 +11,9 @@ set nocompatible
 autocmd FileType make set noexpandtab
 autocmd FileType make set softtabstop=8
 
+" Template filetype
+au BufNewFile,BufRead *.tmpl set filetype=sh
+
 " Start NERDTree if no option given
 autocmd vimenter * if !argc() | NERDTree | endif
 
