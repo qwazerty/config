@@ -45,7 +45,7 @@ alias ..='source ~/.zshrc'
 alias us='setxkbmap us'
 alias usi='setxkbmap us_intl'
 alias fr='setxkbmap fr'
-alias dv='setxkbmap us dvorak'
+alias dv='setxkbmap us dvorak-alt-intl'
 
 # Makefile aliases
 alias m='make'
