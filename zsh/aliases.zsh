@@ -45,7 +45,7 @@ alias ..='source ~/.zshrc'
 alias us='setxkbmap us'
 alias usi='setxkbmap us_intl'
 alias fr='setxkbmap fr'
-alias dv='setxkbmap us dvorak'
+alias dv='setxkbmap us dvorak-alt-intl'
 
 # Makefile aliases
 alias m='make'
@@ -60,7 +60,7 @@ alias emacs='emacs -nw'
 alias ne='emacs'
 
 # Programming aliases
-alias valgrind='valgrind -v --leak-check=full --show-reachable=yes \
+alias valgrindfull='valgrind -v --leak-check=full --show-reachable=yes \
     --track-fds=yes --track-origins=yes'
 # Dat flags
 alias gppf='g++ -W -Wall -Wextra -Werror -std=c++0x -pedantic'
