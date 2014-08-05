@@ -37,8 +37,8 @@
 *color4:  #305adf
 *color12: #4475ff
 ! DarkMangenta + Mangenta
-URxvt*color5:  #de6c00
-URxvt*color13: #fa8900
+*color5:  #de6c00
+*color13: #fa8900
 !DarkCyan + Cyan (both not tango)
 *color6:  #99c6f2
 *color14: #56b4ff
