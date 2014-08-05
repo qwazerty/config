@@ -1,26 +1,33 @@
 # Set the current command as title
 # Jobs display thanks to Chmool
 
+title_jobs() {
+    TITLE_JOBS=$(jobs | wc -l 2>/dev/null)
+    [ $TITLE_JOBS -ne 0 ] && echo "($TITLE_JOBS) "
+}
+
+title_path() {
+    if [[ "$PWD" =~ ^"$HOME"(/|$) ]]; then
+        echo "[~${PWD#$HOME}]"
+    else
+        echo "[$PWD]"
+    fi
+}
+
+title_ssh() {
+    [ -n "$SSH_CONNECTION" ] && echo "[ssh] "
+}
+
 set_title() {
-    [ -n "$SSH_CONNECTION" ]
-    print -Pn "\e]0;%(?:[ssh] :)%1(j:(%j) :)[%~] $1\a\a"
+    echo -n "\e]2;$(title_ssh)$(title_jobs)$(title_path) $1\a\a"
 }
 
 set_title_precmd() {
-    set_title "${JOBS}%n@%m"
+    set_title "${JOBS}${USER}@${HOST}"
 }
 
 set_title_preexec() {
-    CMD=$1
-    case "$CMD" in
-        "fg {0,}")
-            CMD=`jobs %% | tr -s ' ' | cut -d' ' -f1,4-`
-            ;;
-        "fg %"*)
-            CMD=`jobs ${1/fg /} | tr -s ' ' | cut -d' ' -f1,4-`
-            ;;
-    esac
-    set_title $CMD
+    set_title $1
 }
 
 if [ "$TERM" != "linux" ]; then

@@ -23,7 +23,7 @@ function prompt_preexec {
 
 function prompt_precmd {
     if (( CALCTIME )); then
-        TIMER_SHOW="$(($SECONDS-$CMDSTARTTIME))"
+        TIMER_SHOW=$(($SECONDS-$CMDSTARTTIME))
     fi
     CALCTIME=0
 }
