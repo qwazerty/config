@@ -1,6 +1,9 @@
 " Enable syntax highlight
 syntax on
 
+" Don't syntax highlight long lines for performance
+set synmaxcol=200
+
 hi Visual ctermbg=20
 
 " Change LineNumber color

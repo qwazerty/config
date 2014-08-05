@@ -10,6 +10,7 @@ nnoremap Y y$
 
 " Map split buffer start cmd on space
 noremap <SPACE> <C-W><C-W>
+noremap + <C-W>=
 
 " Map set number command
 noremap <F1> :set norelativenumber<CR>:set number<CR>
