@@ -46,10 +46,15 @@ XF86Launch6() {
 }
 
 Zlock () {
+    killall ssh-agent
     if which metalock >/dev/null 2>&1; then
         metalock
     elif which i3lock >/dev/null 2>&1; then
-        i3lock -i ~/stuff/random/background.png
+        if [ -e ~/stuff/random/background.png ]; then
+            i3lock -i ~/stuff/random/background.png
+        else
+            i3lock -c 420042
+        fi
     fi
 }
 
