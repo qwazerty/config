@@ -3,3 +3,4 @@ weechat
 *.log
 *.swp
 *~
+vim/tmp

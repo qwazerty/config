@@ -33,9 +33,6 @@ autocmd FileType make set softtabstop=8
 au BufNewFile,BufRead *.tmpl set filetype=sh
 au BufNewFile,BufRead *.md set filetype=markdown
 
-" Start NERDTree if no option given
-autocmd vimenter * if !argc() | NERDTree | endif
-
 " Keep history when switching between buffers
 set hidden
 
@@ -75,6 +72,18 @@ set synmaxcol=200
 
 " Highlight column after 80 characters
 set colorcolumn=80
+
+" Set backup and undo directory
+set backup
+set undofile
+
+set backupdir=~/.vim/tmp/backup
+set directory=~/.vim/tmp/temp
+set undodir=~/.vim/tmp/undo
+
+silent !mkdir -p ~/.vim/tmp/backup
+silent !mkdir -p ~/.vim/tmp/temp
+silent !mkdir -p ~/.vim/tmp/undo
 
 " Trailing spaces and trim
 highlight ExtraWhitespace ctermbg=red guibg=red
