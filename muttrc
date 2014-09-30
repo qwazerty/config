@@ -1,4 +1,4 @@
-set my_name     = 'Kevin "qwazerty" Houdebert'
+set my_name     = "Kevin Houdebert"
 set imap_user   = "kevin.houdebert@gmail.com"
 set from        = $imap_user
 set folder      = imaps://imap.gmail.com/

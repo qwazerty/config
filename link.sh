@@ -1,7 +1,5 @@
 #!/bin/sh
 
-PWD=`pwd`
-
 rm -rf ~/.zsh
 rm -rf ~/.i3
 rm -rf ~/.vim
