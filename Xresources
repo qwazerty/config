@@ -3,7 +3,7 @@
 ! ==================
 
 ! - Scroll Bar
-!*saveLines:            100000
+*saveLines:            100000
 *scrollBar:             false
 *urgentOnBell:     true
 
@@ -12,36 +12,36 @@
 ! ==============
 
 ! -- Background color
-*background:       black
+URxvt*background:       black
 
 ! -- Foreground color
-*foreground:       #cccccc
+URxvt*foreground:       #cccccc
 
 ! - Cursor color
-*cursorColor:      #ccaccc
+URxvt*cursorColor:      #ccaccc
 
 ! - 8/16 Colors
 ! Black (not tango) + DarkGrey
-*color0:  #000000
-*color8:  #656763
+URxvt*color0:  #000000
+URxvt*color8:  #656763
 ! DarkRed + Red
-*color1:  #ff2525
-*color9:  #ff0d0d
+URxvt*color1:  #ff2525
+URxvt*color9:  #ff0d0d
 ! DarkGreen + Green
-*color2:  #63d43f
-*color10: #98f768
+URxvt*color2:  #63d43f
+URxvt*color10: #98f768
 ! DarkYellow + Yellow
-*color3:  #e5b900
-*color11: #d5a900
+URxvt*color3:  #e5b900
+URxvt*color11: #d5a900
 ! DarkBlue + Blue
-*color4:  #305adf
-*color12: #4475ff
+URxvt*color4:  #305adf
+URxvt*color12: #4475ff
 ! DarkMangenta + Mangenta
-*color5:  #de6c00
-*color13: #fa8900
+URxvt*color5:  #de6c00
+URxvt*color13: #fa8900
 !DarkCyan + Cyan (both not tango)
-*color6:  #99c6f2
-*color14: #56b4ff
+URxvt*color6:  #99c6f2
+URxvt*color14: #56b4ff
 ! LightGrey + White
-*color7:  #dddddd
-*color15: #ffffff
+URxvt*color7:  #dddddd
+URxvt*color15: #ffffff
