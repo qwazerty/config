@@ -81,9 +81,9 @@ set backupdir=~/.vim/tmp/backup
 set directory=~/.vim/tmp/temp
 set undodir=~/.vim/tmp/undo
 
-silent !mkdir -p ~/.vim/tmp/backup
-silent !mkdir -p ~/.vim/tmp/temp
-silent !mkdir -p ~/.vim/tmp/undo
+"silent !mkdir -p ~/.vim/tmp/backup
+"silent !mkdir -p ~/.vim/tmp/temp
+"silent !mkdir -p ~/.vim/tmp/undo
 
 " Trailing spaces and trim
 highlight ExtraWhitespace ctermbg=red guibg=red
