@@ -21,6 +21,14 @@ XF86AudioPlay() {
     exit
 }
 
+XF86MonBrightnessDown() {
+    xbacklight -dec 10
+}
+
+XF86MonBrightnessUp() {
+    xbacklight -inc 10
+}
+
 XF86Tools() {
     exit
 }

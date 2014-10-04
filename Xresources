@@ -45,3 +45,11 @@ URxvt*color14: #56b4ff
 ! LightGrey + White
 URxvt*color7:  #dddddd
 URxvt*color15: #ffffff
+
+! URLs
+URxvt.perl-ext-common:      default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:  chromium
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-Escape:      perl:keyboard-select:activate
+URxvt.keysym.M-s:           perl:keyboard-select:search
