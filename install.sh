@@ -14,6 +14,8 @@ rm -f ~/.gitconfig
 rm -f ~/.tmux.conf
 rm -f ~/.muttrc
 
+mkdir -p ~/.vim/tmp/{backup,temp,undo}
+
 ln -s $PWD/zsh ~/.zsh
 ln -s $PWD/i3 ~/.i3
 ln -s $PWD/vim ~/.vim
