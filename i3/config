@@ -19,6 +19,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt -cd "$(xcwd)"
+bindsym $mod+c exec chromium
 
 # kill focused window
 bindsym $mod+Shift+Q kill
