@@ -87,6 +87,7 @@ alias z='i3lock -c 424242'
 alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
 alias red='redshift -l 48.8566:2.3522'
 alias ..='source ~/.zshrc'
+epath() { export PATH=$PATH:$1 }
 
 # Setxkbmap aliases
 alias us='setxkbmap us'
