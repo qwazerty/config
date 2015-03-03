@@ -33,6 +33,9 @@ autocmd FileType make set softtabstop=8
 au BufNewFile,BufRead *.tmpl set filetype=sh
 au BufNewFile,BufRead *.md set filetype=markdown
 
+" Enable filetype plugin
+filetype plugin indent on
+
 " Keep history when switching between buffers
 set hidden
 
