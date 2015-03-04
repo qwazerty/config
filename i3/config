@@ -87,8 +87,8 @@ bindsym $mod+Shift+parenleft move workspace 9
 bindsym $mod+Shift+parenright move workspace 10
 
 # switch to screen
-bindsym $mod+Left focus left
-bindsym $mod+Right focus right
+bindsym $mod+Left focus output left
+bindsym $mod+Right focus output right
 
 # move focused workspace to screen
 bindsym $mod+Shift+Left move workspace to output left
