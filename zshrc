@@ -14,10 +14,7 @@ else
 fi
 
 # Set language to en_US.utf8
-export LC_ALL=en_US.utf8
-
-# Set default language to LC_ALL value
-export LANG="$LC_ALL"
+export LANG=en_US.UTF-8
 
 # Set TERMINAL for i3-sensible-terminal
 export TERMINAL=urxvt
@@ -39,13 +36,13 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 
 # Color for less
-export LESS_TERMCAP_mb=$(printf "\e[1;31m")
-export LESS_TERMCAP_md=$(printf "\e[1;31m")
+export LESS_TERMCAP_mb=$(printf "\e[0;31m")
+export LESS_TERMCAP_md=$(printf "\e[0;31m")
 export LESS_TERMCAP_me=$(printf "\e[0m")
 export LESS_TERMCAP_se=$(printf "\e[0m")
-export LESS_TERMCAP_so=$(printf "\e[1;44;33m")
+export LESS_TERMCAP_so=$(printf "\e[0;44;33m")
 export LESS_TERMCAP_ue=$(printf "\e[0m")
-export LESS_TERMCAP_us=$(printf "\e[1;32m")
+export LESS_TERMCAP_us=$(printf "\e[0;32m")
 
 # Source ssh-agent
 [ -e ~/.ssh/ssh_${HOST}_${USER}.agent ] && . ~/.ssh/ssh_${HOST}_${USER}.agent
@@ -263,11 +260,11 @@ if [ "$TERM" != "linux" ]; then
     add-zsh-hook preexec set_title_preexec
 fi
 
+# Load custom conf file
+[ -e ~/.myzshrc ] && . ~/.myzshrc
+
 if [ "$TTY" = "/dev/tty1" ]; then
     exec startx
 fi
-
-# Load custom conf file
-[ -e ~/.myzshrc ] && . ~/.myzshrc
 
 true
