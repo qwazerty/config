@@ -262,6 +262,9 @@ fi
 
 # Load custom conf file
 [ -e ~/.myzshrc ] && . ~/.myzshrc
+for i in ~/.zsh/*; do
+    . $i
+done
 
 if [ "$TTY" = "/dev/tty1" ]; then
     exec startx
