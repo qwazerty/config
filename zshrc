@@ -85,6 +85,7 @@ alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
 alias red='redshift -l 48.8566:2.3522'
 alias ..='source ~/.zshrc'
 epath() { export PATH=$PATH:$1 }
+alias dog='highlight -O ansi'
 
 # Setxkbmap aliases
 alias us='setxkbmap us'
@@ -133,6 +134,7 @@ alias unscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 # Ping test
 alias pt='ping -c 3 www.google.com'
 alias ptt='ping -c 3 www.acu.epita.fr'
+alias myip='curl ifconfig.co'
 
 # Binding emacs mode bindings keys
 bindkey -e
@@ -262,6 +264,7 @@ fi
 
 # Load custom conf file
 [ -e ~/.myzshrc ] && . ~/.myzshrc
+[ -d ~/.zsh.d/ ] && . ~/.zsh.d/*
 
 if [ "$TTY" = "/dev/tty1" ]; then
     exec startx
