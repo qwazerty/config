@@ -2,9 +2,6 @@
     name = Kevin Houdebert
     email = kevin@qwazerty.eu
 
-[color]
-    ui = auto
-
 [alias]
     s = status
     l = log
@@ -16,5 +13,9 @@
     d = diff
     list = diff --cached --name-only
     sh = ls-tree --name-only -r HEAD
+
 [push]
     default = matching
+
+[color]
+    ui = auto
