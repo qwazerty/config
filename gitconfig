@@ -1,17 +1,20 @@
 [user]
-	name = Kevin Houdebert
-	email = kevin@qwazerty.eu
+    name = Kevin Houdebert
+    email = kevin@qwazerty.eu
+
+[color]
+    ui = auto
 
 [alias]
-        s = status
-        l = log
-        a = add -v
-        c = commit
-        cm = commit -m
-        cam = commit -am
-        ck = checkout
-        d = diff
-        list = diff --cached --name-only
-        sh = ls-tree --name-only -r HEAD
+    s = status
+    l = log
+    a = add -v
+    c = commit
+    cm = commit -m
+    cam = commit -am
+    ck = checkout
+    d = diff
+    list = diff --cached --name-only
+    sh = ls-tree --name-only -r HEAD
 [push]
-	default = matching
+    default = matching

@@ -27,4 +27,6 @@ ln -s $PWD/gitconfig ~/.gitconfig
 ln -s $PWD/tmux.conf ~/.tmux.conf
 ln -s $PWD/muttrc ~/.muttrc
 
-mkdir -p ~/.vim/tmp/{backup,temp,undo}
+mkdir -p ~/.vim/tmp/backup
+mkdir -p ~/.vim/tmp/temp
+mkdir -p ~/.vim/tmp/undo
