@@ -20,6 +20,10 @@ URxvt*foreground:       #cccccc
 ! - Cursor color
 URxvt*cursorColor:      #ccaccc
 
+! Fonts
+URxvt*font:                 xft:Inconsolata:size=10
+URxvt*boldfont:             xft:Inconsolata:bold:size=10
+
 ! - 8/16 Colors
 ! Black (not tango) + DarkGrey
 URxvt*color0:  #000000
