@@ -86,6 +86,7 @@ alias red='redshift -l 48.8566:2.3522'
 alias ..='source ~/.zshrc'
 epath() { export PATH=$PATH:$1 }
 alias dog='highlight -O ansi'
+ss() { /usr/bin/ss $@ | column -t }
 
 # Setxkbmap aliases
 alias us='setxkbmap us'
