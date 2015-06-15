@@ -222,7 +222,7 @@ prompt_ssh_agent() {
 
 prompt_openstack() {
     if [ -n "$OS_USERNAME" ]; then
-        echo "%{$fg[red]%}(%{$fg[cyan]%}ostack%{$fg[red]%}) %{$reset_color%}"
+        echo "%{$fg[red]%}(%{$fg[cyan]%}os:$OS_USERNAME%{$fg[red]%}) %{$reset_color%}"
     fi
 }
 
