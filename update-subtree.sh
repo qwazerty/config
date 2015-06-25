@@ -1,7 +1,7 @@
 #!/bin/sh
 
 git_subtree() {
-    if [ -f $1 ]; then
+    if [ -d $1 ]; then
         git subtree pull -P $1 $2 master --squash
     else
         git subtree add -P $1 $2 master --squash
