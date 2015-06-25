@@ -4,3 +4,4 @@ weechat
 *.swp
 *~
 vim/tmp
+__pycache__
