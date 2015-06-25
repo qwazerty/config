@@ -124,7 +124,7 @@ alias gccf='gcc -std=c99 -pedantic -Wall \
 alias retag='ctags --tag-relative -Rf.git/tags'
 
 # Start ssh-agent
-alias ssha='ssh-agent -t 8h | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent && source ~/.ssh/ssh_${HOST}_${USER}.agent && ssh-add'
+alias ssha='ssh-agent -t 12h | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent && source ~/.ssh/ssh_${HOST}_${USER}.agent && ssh-add'
 alias sshk='eval $(ssh-agent -k); rm ~/.ssh/ssh_${HOST}_${USER}.agent'
 alias venv='source venv/bin/activate'
 
@@ -270,8 +270,8 @@ if [ "$TERM" != "linux" ]; then
 fi
 
 # Load custom conf file
-[ -e ~/.myzshrc ] && . ~/.myzshrc
-[ -d ~/.zsh/ ] && . ~/.zsh/*
+[ -e ~/.myzshrc ] && source ~/.myzshrc
+[ -d ~/.zsh/ ] && source ~/.zsh/*
 
 if [ "$TTY" = "/dev/tty1" ]; then
     exec startx
