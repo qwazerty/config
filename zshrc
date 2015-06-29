@@ -271,7 +271,7 @@ fi
 
 # Load custom conf file
 [ -e ~/.myzshrc ] && source ~/.myzshrc
-[ -d ~/.zsh/ ] && source ~/.zsh/*
+[ -d ~/.zsh/ ] && for i in ~/.zsh/*; do source $i; done
 
 if [ "$TTY" = "/dev/tty1" ]; then
     exec startx
