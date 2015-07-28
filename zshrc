@@ -49,7 +49,7 @@ export LESS_TERMCAP_us=$(printf "\e[0;32m")
 
 # Common aliases
 case $(uname -s) in
-    Linux)
+    Linux|CYGWIN_NT*)
         alias ls='ls --color'
         alias l='ls'
         alias la='ls -la'
@@ -215,9 +215,7 @@ prompt_ssh() {
 }
 
 prompt_ssh_agent() {
-    if ssh-add -l >/dev/null 2>&1; then
-        echo "%{$fg[red]%}(%{$fg[cyan]%}ssh%{$fg[red]%}) %{$reset_color%}"
-    fi
+    [ -n "$SSH_AGENT_PID" ] && echo "%{$fg[red]%}(%{$fg[cyan]%}ssh%{$fg[red]%}) %{$reset_color%}"
 }
 
 prompt_openstack() {
