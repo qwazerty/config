@@ -81,7 +81,6 @@ alias tmux='tmux -2'
 alias g='git'
 alias z='i3lock -c 424242'
 
-alias mmount='sudo mount -t ntfs -o uid=qwazerty,gid=users,umask=0022'
 alias red='redshift -l 48.8566:2.3522'
 alias ..='source ~/.zshrc'
 epath() { export PATH=$PATH:$1 }
@@ -104,7 +103,6 @@ alias mclm='make clean && make'
 
 # Haha.
 alias emacs='emacs -nw'
-alias ne='emacs'
 
 # Programming aliases
 alias valgrindfull='valgrind -v --leak-check=full --show-reachable=yes \
@@ -126,6 +124,7 @@ alias retag='ctags --tag-relative -Rf.git/tags'
 # Start ssh-agent
 alias ssha='ssh-agent -t 12h | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent && source ~/.ssh/ssh_${HOST}_${USER}.agent && ssh-add'
 alias sshk='eval $(ssh-agent -k); rm ~/.ssh/ssh_${HOST}_${USER}.agent'
+alias sshr='ssh-keygen -R'
 alias venv='source venv/bin/activate'
 
 # UNsafe SSH
@@ -133,8 +132,8 @@ alias unssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias unscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Ping test
-alias pt='ping -c 3 www.google.com'
-alias ptt='ping -c 3 www.acu.epita.fr'
+alias pt='ping www.google.com'
+alias ptt='ping www.acu.epita.fr'
 alias myip='curl ifconfig.co'
 
 # Binding emacs mode bindings keys
@@ -147,7 +146,7 @@ bindkey '^F' emacs-forward-word
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/qwazerty/.zshrc'
 
-autoload -U compinit promptinit
+autoload -U compinit promptinit vcs_info
 compinit
 promptinit
 # End of lines added by compinstall
@@ -166,6 +165,7 @@ setopt histignoredups
 
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' menu select=1
+zstyle ':vcs_info:*' enable git svn
 
 autoload -U colors && colors
 setopt prompt_subst
@@ -176,9 +176,15 @@ prompt_char() {
     echo -n "%{$reset_color%}"
 }
 
+vcs_precmd() {
+    vcs_info
+    zstyle ':vcs_info:*' formats '%b'
+    zstyle ':vcs_info:*' enable git hg
+}
+
 parse_git_branch() {
-    ref=$(git symbolic-ref HEAD 2> /dev/null) || return
-    echo "%{$fg[red]%}(%{$fg[cyan]%}${ref#refs/heads/}%{$fg[red]%})%{$reset_color%} "
+    VCS_INFO="${vcs_info_msg_0_}"
+    [ -n "$VCS_INFO" ] && echo "%{$fg[red]%}(%{$fg[cyan]%}$VCS_INFO%{$fg[red]%})%{$reset_color%} "
 }
 
 clock() {
@@ -225,6 +231,7 @@ prompt_openstack() {
 }
 
 add-zsh-hook precmd prompt_precmd
+add-zsh-hook precmd vcs_precmd
 add-zsh-hook preexec prompt_preexec
 
 export PROMPT='%(!.$(prompt_ssh).%{$fg[yellow]%}%n$(prompt_ssh)@)%m %{$fg[blue]%}%~ $(prompt_char)%{$reset_color%} '
