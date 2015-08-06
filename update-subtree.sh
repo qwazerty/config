@@ -13,3 +13,4 @@ git_subtree vim/bundle/vim-fugitive/ https://github.com/tpope/vim-fugitive
 git_subtree vim/bundle/ctrlp.vim https://github.com/kien/ctrlp.vim
 git_subtree vim/bundle/nerdtree https://github.com/scrooloose/nerdtree
 git_subtree vim/bundle/puppet-syntax-vim https://github.com/puppetlabs/puppet-syntax-vim
+git_subtree vim/bundle/vim-ansible-yaml https://github.com/chase/vim-ansible-yaml
