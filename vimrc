@@ -76,7 +76,7 @@ set wildmenu
 set wildmode=longest,full
 
 " Don't syntax highlight long lines for performance
-set synmaxcol=200
+set synmaxcol=400
 
 " Highlight column after 80 characters
 set colorcolumn=80

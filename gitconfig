@@ -19,3 +19,5 @@
 
 [color]
     ui = auto
+[gitreview]
+	username = qwazerty
