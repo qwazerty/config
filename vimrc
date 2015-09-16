@@ -123,6 +123,12 @@ au InsertEnter * set cursorline
 au InsertLeave * hi LineNr cterm=none ctermfg=yellow
 au InsertLeave * set nocursorline
 
+" When editing a file, always jump to the last known cursor position.
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+
 " Remap : on ;
 nnoremap ; :
 
@@ -151,77 +157,7 @@ noremap <C-L> :bn<CR>
 " Disable this f*cking binding
 noremap Q <Nop>
 
-" Add custom command to change tab width
-command Tab2 execute "set sts=2 | set sw=2"
-command Tab4 execute "set sts=4 | set sw=4"
-
-" Open the corresponding file format
-command C execute "edit " . expand('%:t:r') . ".c"
-command H execute "edit " . expand('%:t:r') . ".h"
-command CC execute "edit " . expand('%:t:r') . ".cc"
-command HH execute "edit " . expand('%:t:r') . ".hh"
-command HXX execute "edit " . expand('%:t:r') . ".hxx"
-
-" Bind Arrow reset
-command ArrowReset execute "call ArrowReset()"
-command ArrowSet execute "call ArrowSet()"
-
-" Bind generate headers
-command Header execute "call Headers()"
-command Class execute "call Class()"
-
 " Write the file with sudo
 command W execute ':silent w !sudo tee % > /dev/null' | :edit
-
-" Generate headers
-function Headers()
-    let gatename = substitute(toupper(expand("%:t")), "[^A-Za-z0-9]", "_", "g")
-    execute "normal! ggO#ifndef " . gatename
-    execute "normal! o# define " . gatename
-    execute "normal! Go#endif /* !" . gatename . " */"
-    execute "normal! O"
-    call cursor(4, 0)
-endfunction
-
-" Generate c++ class
-function Class()
-    let classname = substitute(expand("%:t:r"), "\[_-]\\(.\\)", "\\u\\1", "g")
-    let classname = substitute(classname, "^.*", "\\u&", "g")
-    let headername = expand("%")
-    execute "split " . expand("%:t:r") . ".cc"
-    execute "normal! i#include \"" . headername . "\""
-    execute "normal! o"
-    execute "normal! o" . classname . "::" . classname . " ()"
-    execute "normal! o{"
-    execute "normal! o}"
-    execute "normal! o"
-    execute "normal! o" . classname . "::~" . classname . " ()"
-    execute "normal! o{"
-    execute "normal! o}"
-    execute "wincmd j"
-    call Headers()
-    execute "normal! iclass " . classname
-    execute "normal! o{"
-    execute "normal! o    public:"
-    execute "normal! o        " . classname . " ();"
-    execute "normal! o        ~" . classname . " ();"
-    execute "normal! o    private:"
-    execute "normal! o};"
-    execute "normal! o"
-endfunction
-
-function ArrowReset()
-    unmap <UP>
-    unmap <DOWN>
-    unmap <LEFT>
-    unmap <RIGHT>
-endfunction
-
-function ArrowSet()
-    map <UP> <C-W>-
-    map <DOWN> <C-W>+
-    map <LEFT> <C-W><
-    map <RIGHT> <C-W>>
-endfunction
 
 call pathogen#infect()
