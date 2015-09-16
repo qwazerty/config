@@ -19,3 +19,7 @@
 
 [color]
     ui = auto
+[branch]
+    autosetuprebase = always
+[branch "*branch-name*"]
+    rebase = true
