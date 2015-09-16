@@ -142,6 +142,7 @@ bindkey '^[Od' emacs-backward-word
 bindkey '^[Oc' emacs-forward-word
 bindkey '^B' emacs-backward-word
 bindkey '^F' emacs-forward-word
+bindkey "${terminfo[kdch1]}" delete-char
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/qwazerty/.zshrc'
