@@ -6,12 +6,8 @@
 # Set the editor to vim
 export EDITOR='vim'
 
-# Set the pager to vimpager if exist
-if [ -e /usr/bin/vimpager ]; then
-  export PAGER='vimpager'
-else
-  export PAGER='less'
-fi
+# Set pager
+export PAGER='less'
 
 # Set language to en_US.utf8
 export LANG=en_US.UTF-8
@@ -19,7 +15,7 @@ export LANG=en_US.UTF-8
 # Set TERMINAL for i3-sensible-terminal
 export TERMINAL=urxvt
 
-if [ -n "$TMUX" ]; then
+if [[ -n "$TMUX" ]]; then
   export TERM=screen-256color
 fi
 
@@ -45,7 +41,7 @@ export LESS_TERMCAP_ue=$(printf "\e[0m")
 export LESS_TERMCAP_us=$(printf "\e[0;32m")
 
 # Source ssh-agent
-[ -e ~/.ssh/ssh_${HOST}_${USER}.agent ] && . ~/.ssh/ssh_${HOST}_${USER}.agent
+[[ -e ~/.ssh/ssh_${HOST}_${USER}.agent ]] && . ~/.ssh/ssh_${HOST}_${USER}.agent
 
 # Common aliases
 case $(uname -s) in
@@ -173,7 +169,7 @@ setopt prompt_subst
 
 prompt_char() {
   echo -n "%(?.%{$fg[blue]%}.%{$fg[red]%})"
-  if [ $UID -eq 0 ]; then echo -n "#"; else echo -n $; fi
+  if [[ $UID -eq 0 ]]; then echo -n "#"; else echo -n $; fi
   echo -n "%{$reset_color%}"
 }
 
@@ -185,7 +181,7 @@ vcs_precmd() {
 
 parse_git_branch() {
   VCS_INFO="${vcs_info_msg_0_}"
-  [ -n "$VCS_INFO" ] && echo "%{$fg[red]%}(%{$fg[cyan]%}$VCS_INFO%{$fg[red]%})%{$reset_color%} "
+  [[ -n "$VCS_INFO" ]] && echo "%{$fg[red]%}(%{$fg[cyan]%}$VCS_INFO%{$fg[red]%})%{$reset_color%} "
 }
 
 clock() {
@@ -206,7 +202,7 @@ prompt_precmd() {
 
 timer_show() {
   timer=$TIMER_SHOW
-  if [ "$timer" -ne 0 ]; then
+  if [[ "$timer" -ne 0 ]]; then
     tmp=$timer
     timer=$(($tmp / 60)):$(printf "%02d" $(($tmp % 60)))
     echo "%{$fg[red]%}(%{$fg[cyan]%}$timer%{$fg[red]%}) "
@@ -214,7 +210,7 @@ timer_show() {
 }
 
 prompt_ssh() {
-  if [ -n "$SSH_CONNECTION" ]; then
+  if [[ -n "$SSH_CONNECTION" ]]; then
     echo "%{$fg[magenta]%}"
   else
     echo "%{$fg[red]%}"
@@ -228,7 +224,7 @@ prompt_ssh_agent() {
 }
 
 prompt_openstack() {
-  if [ -n "$OS_USERNAME" ]; then
+  if [[ -n "$OS_USERNAME" ]]; then
     echo "%{$fg[red]%}(%{$fg[cyan]%}os:$OS_USERNAME%{$fg[red]%}) %{$reset_color%}"
   fi
 }
@@ -245,7 +241,7 @@ export RPROMPT='$(timer_show)$(prompt_openstack)$(prompt_ssh_agent)$(parse_git_b
 
 title_jobs() {
   TITLE_JOBS=$(jobs | wc -l 2>/dev/null)
-  [ $TITLE_JOBS -ne 0 ] && echo "($TITLE_JOBS) "
+  [[ $TITLE_JOBS -ne 0 ]] && echo "($TITLE_JOBS) "
 }
 
 title_path() {
@@ -257,7 +253,7 @@ title_path() {
 }
 
 title_ssh() {
-  [ -n "$SSH_CONNECTION" ] && echo "[ssh] "
+  [[ -n "$SSH_CONNECTION" ]] && echo "[ssh] "
 }
 
 set_title() {
@@ -272,17 +268,18 @@ set_title_preexec() {
   set_title $1
 }
 
-if [ "$TERM" != "linux" ]; then
+if [[ "$TERM" != "linux" ]]; then
   add-zsh-hook precmd set_title_precmd
   add-zsh-hook preexec set_title_preexec
 fi
 
 # Load custom conf file
-[ -e ~/.myzshrc ] && source ~/.myzshrc
-[ -d ~/.zsh/ ] && for i in ~/.zsh/*; do source $i; done
+[[ -e ~/.myzshrc ]] && source ~/.myzshrc
+[[ -d ~/.zsh/ ]] && for i in ~/.zsh/*; do source $i; done
 
-if [ "$TTY" = "/dev/tty1" ]; then
-  exec startx
+if [[ "$TTY" = "/dev/tty1" ]]; then
+  command -v ssha &>/dev/null && ssha
+  command -v startx &>/dev/null && exec startx
 fi
 
 true
