@@ -54,7 +54,6 @@ XF86Launch6() {
 }
 
 Zlock () {
-    killall ssh-agent
     if which metalock >/dev/null 2>&1; then
         metalock
     elif which i3lock >/dev/null 2>&1; then
