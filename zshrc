@@ -167,12 +167,6 @@ zstyle ':vcs_info:*' enable git svn
 autoload -U colors && colors
 setopt prompt_subst
 
-prompt_char() {
-  echo -n "%(?.%{$fg[blue]%}.%{$fg[red]%})"
-  if [[ $UID -eq 0 ]]; then echo -n "#"; else echo -n $; fi
-  echo -n "%{$reset_color%}"
-}
-
 vcs_precmd() {
   vcs_info
   zstyle ':vcs_info:*' formats '%b'
@@ -233,7 +227,7 @@ add-zsh-hook precmd prompt_precmd
 add-zsh-hook precmd vcs_precmd
 add-zsh-hook preexec prompt_preexec
 
-export PROMPT='%(!.$(prompt_ssh).%{$fg[yellow]%}%n$(prompt_ssh)@)%m %{$fg[blue]%}%~ $(prompt_char)%{$reset_color%} '
+export PROMPT='%(!.$(prompt_ssh).%{$fg[yellow]%}%n$(prompt_ssh)@)%m %{$fg[blue]%}%3~ %#%{$reset_color%} '
 export RPROMPT='$(timer_show)$(prompt_openstack)$(prompt_ssh_agent)$(parse_git_branch)$(clock)'
 
 # Set the current command as title
