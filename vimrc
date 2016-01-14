@@ -37,9 +37,15 @@ autocmd FileType make set softtabstop=8
 " Filetypes
 au BufNewFile,BufRead *.tmpl set filetype=sh
 au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.yml set filetype=ansible
+au BufNewFile,BufRead *.gradle set filetype=groovy
+
+" Disable modeline
+"set nomodeline
 
 " Enable filetype plugin
 filetype plugin indent on
+autocmd FileType yaml setl indentkeys-=<:>
 
 " Keep history when switching between buffers
 set hidden
