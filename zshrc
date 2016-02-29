@@ -61,15 +61,6 @@ case $(uname -s) in
     ;;
 esac
 
-alias cdo='cd $_'
-alias cdb='cd -'
-
-alias e='vim'
-alias u='ls'
-alias o='cd'
-alias j='jobs'
-alias mk='mkdir -p'
-
 alias wm_name='xprop | grep WM_CLASS'
 alias chmox='chmod +x'
 alias tmux='tmux -2'
@@ -89,39 +80,15 @@ alias usi='setxkbmap us_intl'
 alias fr='setxkbmap fr'
 alias dv='setxkbmap us dvorak-alt-intl'
 
-# Makefile aliases
-alias m='make'
-alias nake='make'
-alias cm='./configure && make'
-alias bcm='make distclean; ./bootstrap && ./configure && make'
-alias bcdm='make distclean; ./bootstrap && ./configure -with-debug && make'
-alias mclm='make clean && make'
-
 # Haha.
 alias emacs='emacs -nw'
-
-# Programming aliases
-alias valgrindfull='valgrind -v --leak-check=full --show-reachable=yes \
-  --track-fds=yes --track-origins=yes'
-# Dat flags
-alias gppf='g++ -W -Wall -Wextra -Werror -std=c++0x -pedantic'
-alias gccf='gcc -std=c99 -pedantic -Wall \
-  -Wno-missing-braces -Wextra -Wno-missing-field-initializers -Wformat=2 \
-  -Wswitch-default -Wswitch-enum -Wcast-align -Wpointer-arith \
-  -Wbad-function-cast -Wstrict-overflow=5 -Wstrict-prototypes -Winline \
-  -Wundef -Wnested-externs -Wcast-qual -Wshadow -Wunreachable-code \
-  -Wlogical-op -Wfloat-equal -Wstrict-aliasing=2 -Wredundant-decls \
-  -Wold-style-definition -Werror \
-  -ggdb3 -g \
-  -O0 \
-  -fno-omit-frame-pointer -ffloat-store -fno-common -fstrict-aliasing'
-alias retag='ctags --tag-relative -Rf.git/tags'
 
 # Start ssh-agent
 alias ssha='ssh-agent -t 12h | grep -v echo > ~/.ssh/ssh_${HOST}_${USER}.agent && source ~/.ssh/ssh_${HOST}_${USER}.agent && ssh-add'
 alias sshk='eval $(ssh-agent -k); rm ~/.ssh/ssh_${HOST}_${USER}.agent'
 alias sshr='ssh-keygen -R'
 alias venv='source venv/bin/activate'
+alias aursh='bash <(curl aur.sh)'
 
 # UNsafe SSH
 alias unssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'

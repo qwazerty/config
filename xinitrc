@@ -13,5 +13,5 @@ setxkbmap us
 setxkbmap -option caps:none
 xset -dpms
 xset r rate 200 80
-xset s off
+xset s on
 exec /usr/bin/i3
