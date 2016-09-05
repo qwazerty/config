@@ -23,3 +23,5 @@
     autosetuprebase = always
 [branch "*branch-name*"]
     rebase = true
+[log]
+    decorate = true
