@@ -15,7 +15,7 @@
     sh = ls-tree --name-only -r HEAD
 
 [push]
-    default = matching
+    default = simple
 
 [color]
     ui = auto
