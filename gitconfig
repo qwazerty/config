@@ -1,6 +1,6 @@
 [user]
     name = Kevin Houdebert
-    email = kevin@qwazerty.eu
+    email = k.houdebert@cultura.fr
 
 [alias]
     s = status
@@ -16,7 +16,6 @@
 
 [push]
     default = simple
-
 [color]
     ui = auto
 [branch]
@@ -25,3 +24,7 @@
     rebase = true
 [log]
     decorate = true
+[core]
+    autocrlf = true
+    ignoreStat = true
+    fscache = true

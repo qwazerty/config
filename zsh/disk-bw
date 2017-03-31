@@ -1,0 +1,37 @@
+#!/bin/bash
+
+_diskbw_getstats(){
+  sectors=$(awk "/${1} /{ print \$${2} }" /proc/diskstats)
+  echo $(expr $sectors \* $sector_size)
+}
+
+_diskbw_once(){
+  device=$1
+  R2=$(_diskbw_getstats $1 6)
+  W2=$(_diskbw_getstats $1 10)
+  RBPS=$(numfmt --to=iec $(expr $R2 - ${r[$device]}))
+  WBPS=$(numfmt --to=iec  $(expr $W2 - ${w[$device]}))
+  r[$device]=$R2
+  w[$device]=$W2
+  echo -ne '\r\e[K'
+  echo -n "$1: read: ${RBPS}${diskBW_UNIT:-bytes} - write: ${WBPS}${diskBW_UNIT:-bytes}"
+}
+
+diskbw(){
+  device=$1
+  if [ -z "$1" ]; then
+    echo "Usage: $0 <device>"
+  elif [ ! -e "/dev/${device}" ]; then
+    echo "Device ${device} not found"
+  else
+    sector_size=$(cat /sys/block/$( echo ${device} | tr -d '[0-9]')/queue/hw_sector_size)
+    typeset -A r
+    typeset -A w
+    r[$device]=$(_diskbw_getstats $1 6)
+    w[$device]=$(_diskbw_getstats $1 10)
+    while [ /bin/true ]; do
+      _diskbw_once $1
+      sleep ${diskBW_FREQ:-1}
+    done
+  fi
+}
