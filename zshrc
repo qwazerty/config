@@ -81,19 +81,13 @@ ssh-add -l &>/dev/null || { ssha; }
 
 # Binding emacs mode bindings keys
 bindkey -e
-bindkey '^[Od' emacs-backward-word
-bindkey '^[Oc' emacs-forward-word
-bindkey '^B' emacs-backward-word
-bindkey '^F' emacs-forward-word
+bindkey "^[[1;3C" forward-word
+bindkey "^[[1;3D" backward-word
 bindkey "${terminfo[kdch1]}" delete-char
 
-# The following lines were added by compinstall
-#zstyle :compinstall filename '/home/qwazerty/.zshrc'
-
-#autoload -U compinit promptinit vcs_info
-#compinit
-#promptinit
-# End of lines added by compinstall
+# Zsh completion
+autoload -U compinit
+compinit
 
 # Disable beep sound
 unsetopt beep
