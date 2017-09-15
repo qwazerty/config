@@ -20,11 +20,7 @@
     ui = auto
 [branch]
     autosetuprebase = always
-[branch "*branch-name*"]
-    rebase = true
 [log]
     decorate = true
 [core]
     autocrlf = true
-    ignoreStat = true
-    fscache = true
