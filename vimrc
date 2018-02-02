@@ -41,7 +41,7 @@ au BufNewFile,BufRead *.yml set filetype=ansible
 au BufNewFile,BufRead *.gradle set filetype=groovy
 
 " Disable modeline
-"set nomodeline
+set nomodeline
 
 " Enable filetype plugin
 filetype plugin indent on
