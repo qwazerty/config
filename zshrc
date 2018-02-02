@@ -62,7 +62,13 @@ alias dv='setxkbmap us dvorak-alt-intl'
 alias ssha='ssh-agent | grep -v echo > ~/.ssh/ssh.agent && source ~/.ssh/ssh.agent && ssh-add'
 alias sshk='eval $(ssh-agent -k); rm ~/.ssh/ssh.agent'
 alias sshr='ssh-keygen -R'
+alias ssht='ssh-keygen -R $(terraform show | grep default_ip_address | cut -d "=" -f2)'
+
+# Custom
 alias aursh='bash <(curl aur.sh)'
+alias taa='terraform apply -auto-approve'
+alias tdf='terraform destroy -force'
+alias tda='terraform destroy -force && terraform apply -auto-approve'
 
 # UNsafe SSH
 alias unssh='ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
