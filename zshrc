@@ -111,6 +111,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*' menu select=1
 zstyle ':vcs_info:*' enable git
 type kubectl >/dev/null && source <(kubectl completion zsh)
+type helm >/dev/null && source <(helm completion zsh)
 
 autoload -U colors && colors
 setopt prompt_subst
