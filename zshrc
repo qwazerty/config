@@ -91,9 +91,10 @@ bindkey "^[[1;3C" forward-word
 bindkey "^[[1;3D" backward-word
 bindkey "${terminfo[kdch1]}" delete-char
 
-# Zsh completion
-autoload -U compinit
+# Zsh autoload
+autoload -Uz compinit colors vcs_info
 compinit
+colors
 
 # Disable beep sound
 unsetopt beep
@@ -107,20 +108,25 @@ unsetopt extendedglob
 # Ignore duplicate in history
 setopt histignoredups
 
+# Set prompt substitution
+setopt prompt_subst
+
 zstyle ':completion:*' verbose true
 zstyle ':completion:*' menu select=1
 zstyle ':vcs_info:*' enable git
+zstyle ':vcs_info:*' formats "%{$fg[red]%}(%{$fg[cyan]%}%b%{$fg[red]%}) "
 type kubectl >/dev/null && source <(kubectl completion zsh)
 type helm >/dev/null && source <(helm completion zsh)
-
-autoload -U colors && colors
-setopt prompt_subst
 
 # Load custom conf file
 [[ -e ~/.myzshrc ]] && source ~/.myzshrc
 [[ -d ~/.zsh/ ]] && for i in ~/.zsh/*; do source $i; done
 
+precmd(){
+  vcs_info
+}
+
 export PROMPT='%{$fg[yellow]%}%n%{$fg[red]%}@%m %{$fg[blue]%}%3~ %(?.%{$fg[blue]%}.%{$fg[red]%})%#%{$reset_color%} '
-export RPROMPT='$(__git_ps1 "%%{$fg[red]%%}(%%{$fg[cyan]%%}%s%%{$fg[red]%%}) ")%{$fg[blue]%}%*%{$reset_color%}'
+export RPROMPT='${vcs_info_msg_0_}%{$fg[blue]%}%*%{$reset_color%}'
 
 true
