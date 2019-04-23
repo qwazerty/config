@@ -108,7 +108,7 @@ type helm >/dev/null && source <(helm completion zsh)
 
 precmd(){
   vcs_info
-  [[ -e ~/.kube/config ]] && KUBE_CONTEXT="%{$fg[red]%}(%{$fg[cyan]%}$(grep -oP 'current-context: \K\w+' ~/.kube/config)%{$fg[red]%}) "
+  [[ -e ~/.kube/config ]] && KUBE_CONTEXT="%{$fg[red]%}(%{$fg[cyan]%}$(grep -oP 'current-context: \K[-\w]+' ~/.kube/config)%{$fg[red]%}) "
 }
 
 export PROMPT='%{$fg[yellow]%}%n%{$fg[red]%}@%m %{$fg[blue]%}%3~ %(?.%{$fg[blue]%}.%{$fg[red]%})%#%{$reset_color%} '
