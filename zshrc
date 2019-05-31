@@ -47,12 +47,15 @@ alias sshk='eval $(ssh-agent -k); rm ~/.ssh/ssh.agent'
 alias sshr='ssh-keygen -R'
 alias ssht='ssh-keygen -R $(terraform show | grep default_ip_address | cut -d "=" -f2)'
 pfx(){ PASSPHRASE=$(pwgen -s 14 -1); openssl pkcs12 -export -out $1.pfx -inkey $1.key -in $1.crt -password pass:$PASSPHRASE; echo $PASSPHRASE > $1.txt; echo "Passphrase: $PASSPHRASE" }
+pem(){ ls *.crt | sed 's/\.crt//' | xargs -I {} bash -c "cat {}.key {}.crt > {}.pem" }
 
 # Custom
 alias taa='terraform apply -auto-approve'
 alias tdf='terraform destroy -force'
 alias tda='terraform destroy -force && terraform apply -auto-approve'
 alias k='kubectl'
+alias ksys='kubectl --namespace=kube-system'
+alias klo='kubectl logs -f'
 ktop(){ kubectl get nodes --no-headers | awk '{print $1}' | xargs -I {} sh -c 'echo {}; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo' }
 
 # UNsafe SSH
