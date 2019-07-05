@@ -66,8 +66,13 @@ alias unscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 alias pt='ping www.google.com'
 alias ptt='ping www.acu.epita.fr'
 alias myip='curl ifconfig.co'
-scurl(){ while true; do curl --write-out "[%{http_code}] %{time_total}s\\n" -s "$1"; sleep 1; done }
-qcurl(){ while true; do curl --write-out "[%{http_code}] %{time_total}s\\n" -s -o/dev/null "$1"; sleep 1; done }
+scurl(){ while true; do curl -s --write-out "[%{http_code}] %{time_total}s\\n" -s "$@"; sleep 1; done }
+qcurl(){ while true; do curl -s -o/dev/null --write-out "[%{http_code}] %{time_total}s\\n" "$@"; sleep 1; done }
+tcurl(){ while true; do curl -s -o/dev/null --write-out "dns:[%{time_namelookup}s] connect:[%{time_connect}s] appconnect:[%{time_appconnect}s]\
+  pretransfer:[%{time_pretransfer}s] redirect:[%{time_redirect}s] starttransfer:[%{time_starttransfer}s] - total:[%{time_total}s]\\n" "$@";
+  sleep 1;
+  done
+}
 
 # Source ssh-agent
 [[ -e ~/.ssh/ssh.agent ]] && . ~/.ssh/ssh.agent
