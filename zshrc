@@ -53,9 +53,11 @@ pem(){ ls *.crt | sed 's/\.crt//' | xargs -I {} bash -c "cat {}.key {}.crt > {}.
 alias taa='terraform apply -auto-approve'
 alias tdf='terraform destroy -force'
 alias tda='terraform destroy -force && terraform apply -auto-approve'
+drun(){ docker run -it $1 bash }
 alias k='kubectl'
 alias ksys='kubectl --namespace=kube-system'
 alias klo='kubectl logs -f'
+krun(){ kubectl run -it --image $1 -- bash }
 ktop(){ kubectl get nodes --no-headers | awk '{print $1}' | xargs -I {} sh -c 'echo {}; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo' }
 
 # UNsafe SSH
@@ -75,8 +77,8 @@ tcurl(){ while true; do curl -s -o/dev/null --write-out "dns:[%{time_namelookup}
 }
 
 # Source ssh-agent
-[[ -e ~/.ssh/ssh.agent ]] && . ~/.ssh/ssh.agent
-ssh-add -l &>/dev/null || { ssha; }
+#[[ -e ~/.ssh/ssh.agent ]] && . ~/.ssh/ssh.agent
+#ssh-add -l &>/dev/null || { ssha; }
 
 # Binding emacs mode bindings keys
 bindkey -e
