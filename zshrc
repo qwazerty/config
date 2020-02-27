@@ -9,9 +9,6 @@ export EDITOR='vim'
 # Set pager
 export PAGER='less'
 
-# Set language to en_US.utf8
-export LANG=en_US.UTF-8
-
 # History file path
 export HISTFILE=~/.histfile
 
@@ -35,9 +32,6 @@ alias ls='ls --color'
 alias l='ls'
 alias la='ls -la'
 alias ll='ls -l'
-alias am='alsamixer'
-
-alias tmux='tmux -2'
 alias g='git'
 alias ..='source ~/.zshrc'
 
@@ -48,15 +42,19 @@ alias sshr='ssh-keygen -R'
 alias ssht='ssh-keygen -R $(terraform show | grep default_ip_address | cut -d "=" -f2)'
 pfx(){ PASSPHRASE=$(pwgen -s 14 -1); openssl pkcs12 -export -out $1.pfx -inkey $1.key -in $1.crt -password pass:$PASSPHRASE; echo $PASSPHRASE > $1.txt; echo "Passphrase: $PASSPHRASE" }
 pem(){ ls *.crt | sed 's/\.crt//' | xargs -I {} bash -c "cat {}.key {}.crt > {}.pem" }
+crt(){ txt=""; while read line; do txt="$txt$line\n"; [ "${line//END}" != "$line" ] && { echo $txt; printf -- "$txt" | openssl x509 -text -noout; txt="" }; done < $@ }
 
 # Custom
+copypasta(){ export PROMPT="# "; unset RPROMPT }
+gfor(){ for i in *; do cd "$i"; echo -e "\e[0;33m=== $i ===\e[0m"; $@; cd - >/dev/null; done }
+gprune(){ git filter-branch -f --index-filter "git rm -rf --cached --ignore-unmatch $@" HEAD }
 alias taa='terraform apply -auto-approve'
 alias tdf='terraform destroy -force'
 alias tda='terraform destroy -force && terraform apply -auto-approve'
 drun(){ docker run -it $1 bash }
 alias k='kubectl'
 alias ksys='kubectl --namespace=kube-system'
-alias klo='kubectl logs -f'
+alias klog='kubectl logs -f'
 krun(){ kubectl run -it --image $1 -- bash }
 ktop(){ kubectl get nodes --no-headers | awk '{print $1}' | xargs -I {} sh -c 'echo {}; kubectl describe node {} | grep Allocated -A 5 | grep -ve Event -ve Allocated -ve percent -ve -- ; echo' }
 
@@ -66,7 +64,6 @@ alias unscp='scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
 
 # Ping test
 alias pt='ping www.google.com'
-alias ptt='ping www.acu.epita.fr'
 alias myip='curl ifconfig.co'
 scurl(){ while true; do curl -s --write-out "[%{http_code}] %{time_total}s\\n" -s "$@"; sleep 1; done }
 qcurl(){ while true; do curl -s -o/dev/null --write-out "[%{http_code}] %{time_total}s\\n" "$@"; sleep 1; done }
@@ -84,10 +81,12 @@ tcurl(){ while true; do curl -s -o/dev/null --write-out "dns:[%{time_namelookup}
 bindkey -e
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
+bindkey "^H" backward-kill-word
 
 # Zsh autoload
-autoload -Uz compinit colors vcs_info
+autoload -Uz compinit bashcompinit colors vcs_info
 compinit
+bashcompinit
 colors
 
 # Disable beep sound
