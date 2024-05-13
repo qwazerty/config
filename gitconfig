@@ -22,3 +22,5 @@
     autosetuprebase = always
 [log]
     decorate = true
+[init]
+    templateDir = ~/.git-template

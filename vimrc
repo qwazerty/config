@@ -18,6 +18,10 @@ set softtabstop=2
 " Add autoindent
 set autoindent
 
+" Disable bell
+set visualbell
+set t_vb=
+
 " Enable syntax highlight
 syntax on
 
